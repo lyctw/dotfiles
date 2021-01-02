@@ -12,9 +12,6 @@ My configuration files for:
     * Use symlink to track the update (must be absolute path): `ln -s ~/Github_repos/dotfiles/vim/vimrc ~/.vimrc`
 * ~~Latex includes~~
 * ~~Custom scripts~~
-* Backups
-    * [yomichan](https://chrome.google.com/webstore/detail/yomichan/ogmnaimimemjmbakcfefmnahgdfhfami#:~:text=Yomichan%20turns%20your%20browser%20into,20.12.6.2) Google extension's setting 
-    * `.zsh_history`: Use it to access my common command (highly recommend to install [fzf](https://github.com/junegunn/fzf) fuzzy finder)
 
 There is also a [script](https://github.com/JJGO/dotfiles/blob/master/shell-setup.sh) for easy simlinking the dotfiles
 
