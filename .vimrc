@@ -1,5 +1,3 @@
-" Ref: https://www.youtube.com/watch?v=n9k9scbTuvQ
-
 syntax on  
 
 set relativenumber
@@ -33,7 +31,7 @@ Plug 'vim-utils/vim-man'
 Plug 'git@github.com:kien/ctrlp.vim.git'
 " Plug 'git@github.com:Valloric/YouCompleteMe.git'
 Plug 'mbbill/undotree'
-" Plug 'wakatime/vim-wakatime'
+Plug 'wakatime/vim-wakatime'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 Plug 'preservim/nerdtree' 
@@ -41,6 +39,7 @@ Plug 'Xuyuanp/nerdtree-git-plugin'
 Plug 'ryanoasis/vim-devicons'
 Plug 'preservim/nerdcommenter'
 Plug 'JamshedVesuna/vim-markdown-preview'
+Plug 'jiangmiao/auto-pairs'
 
 call plug#end()
 
