@@ -8,7 +8,7 @@
 sudo apt upgrade -y
 
 # See bash changes
-source ~/.bashrc
+# source ~/.bashrc
 
 # Hello World
 figlet "... Dotfiles configured!" | lolcat

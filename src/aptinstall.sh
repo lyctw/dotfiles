@@ -13,7 +13,7 @@ function install {
   fi
 }
 
-install chromium-browser
+# install chromium-browser
 install curl
 install git
 install openssh-server
