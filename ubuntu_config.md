@@ -54,6 +54,9 @@
     * NodeJS
         * 官方: [How to install nodejs via binary archive on Linux](https://github.com/nodejs/help/wiki/Installation#how-to-install-nodejs-via-binary-archive-on-linux)
         * [Install NodeJS via binary archive on Ubuntu 18.04](https://medium.com/@rabbi.cse.sust.bd/install-nodejs-via-binary-archive-on-ubuntu-18-04-63118473d9e9)
+        * Symlink `node`, `npm` for `sudo` commands
+            * `sudo ln -s $(where npm) /usr/bin/npm`  
+            * `sudo ln -s $(where node) /usr/bin/node`  
     * ~~[Visual Studio Code Remote Development through SSH](https://www.youtube.com/watch?v=lKXMyln_5q4)~~
     * ~~Windows Subsystem for Linux~~
         * [Windows Subsystem for Linux (WSL)](https://hackmd.io/@billsun/Bkh8oAmGX?type=view)
