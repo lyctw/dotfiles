@@ -113,6 +113,10 @@ alias mkdir='mkdir -pv'
 alias mv='mv -v'
 alias wget='wget -c'
 
+# Use programs without a root-equivalent group
+alias docker='sudo docker'
+alias npm='sudo npm'
+
 # Show contents of dir after action
 function cd () {
     builtin cd "$1"
@@ -135,3 +139,4 @@ export PATH="$PATH:$HOME/.rvm/bin"
 VERSION=v10.15.0
 DISTRO=linux-x64
 export PATH=/usr/local/lib/nodejs/node-$VERSION-$DISTRO/bin:$PATH
+
