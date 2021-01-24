@@ -66,3 +66,7 @@
         * Sonic Visualiser
             * Install [Chordino](https://www.vamp-plugins.org/download.html)
             * 下面有安裝教學 創一個vamp資料夾  把.so檔丟進去
+    * Git
+        * Tips for git hooks
+            * use absolute path for symlink
+            * Set permission by `chmod u+x` on hook scripts
