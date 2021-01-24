@@ -16,6 +16,7 @@ set undofile
 set incsearch
 set clipboard=unnamedplus " to copy data between different instances of vim
 set encoding=UTF-8 " devicons
+set formatoptions-=cro " stop auto-create comment on Enter, c & o
 
 set colorcolumn=80
 highlight ColorColumn ctermbg=0 guibg=lightgrey
