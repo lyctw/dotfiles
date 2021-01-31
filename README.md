@@ -37,8 +37,11 @@ sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/too
 4. Install F-Sy-H
 
 ```
-git clone https://github.com/zdharma/fast-syntax-highlighting $HOME/.zsh/fast-syntax-highlighting/
+git clone https://github.com/zdharma/fast-syntax-highlighting.git \
+  ${ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom}/plugins/fast-syntax-highlighting
 ```
+
+  And add `fast-syntax-highlighting` to your plugin list.
 
 5. Create `.zshrc` symlink
 

@@ -115,13 +115,14 @@ alias wget='wget -c'
 
 # Use programs without a root-equivalent group
 alias docker='sudo docker'
-alias npm='sudo npm'
+# alias npm='sudo npm'
 
 # Show contents of dir after action
 function cd () {
     builtin cd "$1"
     ls -ACF
 }
+
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
@@ -136,7 +137,7 @@ function cd () {
 export PATH="$PATH:$HOME/.rvm/bin"
 
 # Nodejs
-VERSION=v10.15.0
+VERSION=v11.15.0
 DISTRO=linux-x64
 export PATH=/usr/local/lib/nodejs/node-$VERSION-$DISTRO/bin:$PATH
 

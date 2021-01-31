@@ -13,8 +13,8 @@ function install {
   fi
 }
 
-# install chromium-browser
 install curl
+install ffmpeg
 install git
 install openssh-server
 install htop
