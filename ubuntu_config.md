@@ -5,7 +5,7 @@
         *  https://itsfoss.com/install-themes-ubuntu/
         * https://itsfoss.com/ubuntu-mate-customization/
         * https://www.youtube.com/watch?v=AHzGYG2XvMI
-    * 常用套件
+    * Useful tools
          1. Shell Tools and Scripting
             * fd, ripgrep, bat, [fzf](https://github.com/junegunn/fzf#using-git)
             * tldr (use npm or pip)
@@ -22,8 +22,8 @@
             * [FlameGraph](https://github.com/brendangregg/FlameGraph)
          4. Potpourri
             * [jq](https://stedolan.github.io/jq/)
-         5. Others
             *  translate-shell, sdcv (dictionary: [here](https://askubuntu.com/questions/191125/is-there-an-offline-command-line-dictionary))
+            * File transfer: [croc](https://github.com/schollz/croc) 
     * 自訂終端機
         * 安裝zsh
           https://www.youtube.com/watch?v=4KBuPCeF9Gc
