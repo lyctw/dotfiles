@@ -24,6 +24,7 @@
             * [jq](https://stedolan.github.io/jq/)
             *  translate-shell, sdcv (dictionary: [here](https://askubuntu.com/questions/191125/is-there-an-offline-command-line-dictionary))
             * File transfer: [croc](https://github.com/schollz/croc) 
+            * Command line slides: [mdp](https://github.com/visit1985/mdp)
     * 自訂終端機
         * 安裝zsh
           https://www.youtube.com/watch?v=4KBuPCeF9Gc
