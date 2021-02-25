@@ -66,7 +66,9 @@
         * Ubuntu JACK 連接設定 
             * http://puredata.info/docs/JackRoutingMultichannelAndBrowserAudio/
         * Sonic Visualiser
-            * Install [Chordino](https://www.vamp-plugins.org/download.html)
+            * Download and install plugins https://www.vamp-plugins.org/download.html
+                * Chord estimate - Chordino and NNLS Chroma
+                * Key detection - Queen Mary plugin set
             * 下面有安裝教學 創一個vamp資料夾  把.so檔丟進去
     * Git
         * Tips for git hooks
