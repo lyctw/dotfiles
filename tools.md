@@ -24,6 +24,7 @@
             * [jq](https://stedolan.github.io/jq/)
             *  translate-shell, sdcv (dictionary: [here](https://askubuntu.com/questions/191125/is-there-an-offline-command-line-dictionary))
             * File transfer: [croc](https://github.com/schollz/croc) 
+            * File converter (html to markdown, etc): [pandoc](https://github.com/jgm/pandoc/releases)
             * Command line slides: [mdp](https://github.com/visit1985/mdp)
             * RSS Reader: [newsboat](https://github.com/newsboat/newsboat)
     * 自訂終端機
