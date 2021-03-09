@@ -1,86 +1,185 @@
-syntax on  
-
+" ============ "
+" ===Basics=== "
+" ============ "
+syntax on
 set relativenumber
-set noerrorbells
-set tabstop=4 softtabstop=4
-set shiftwidth=4
-set expandtab
-set smartindent
+set noerrorbells 
+set belloff=all
+set expandtab 
 set nu
-set wrap
+set nowrap
 set smartcase
 set noswapfile
 set nobackup
-set undodir=~/.vim/undodir " mkdir -p ~/.vim/undodir
-set undofile
 set incsearch
-set clipboard=unnamedplus " to copy data between different instances of vim
-set encoding=UTF-8 " devicons
-set formatoptions-=cro " stop auto-create comment on Enter, c & o
+set autoindent
+set laststatus=2
 
-set colorcolumn=80
-highlight ColorColumn ctermbg=0 guibg=lightgrey
+" File-types
+autocmd BufNewFile,BufRead *.go set filetype=go
 
+" Tabs
+set sw=2 ts=2 sts=2 " Default
+autocmd FileType html :setlocal sw=2 ts=2 sts=2
+autocmd FileType ruby :setlocal sw=2 ts=2 sts=2
+autocmd FileType javascript :setlocal sw=2 ts=2 sts=2
+autocmd FileType xml :setlocal sw=2 ts=2 sts=2
+autocmd FileType python :setlocal sw=4 ts=4 sts=4
+autocmd FileType go :setlocal sw=4 ts=4 sts=4
+
+" Make vertical separator pretty
+highlight VertSplit cterm=NONE
+set fillchars+=vert:\▏
+
+" Get rid of unnecessary highlight for spelling
+highlight clear SpellBad
+
+" ============== "
+" ===Mappings=== "
+" ============== "
+let mapleader = " "
+
+" Pane navigation
+noremap <C-J> <C-W><C-J>
+noremap <C-K> <C-W><C-K>
+noremap <C-L> <C-W><C-L>
+noremap <C-H> <C-W><C-H>
+
+" Copy to system clipboard
+noremap <leader>c "*yy<cr>
+
+" Paste without indent
+noremap<leader>v "+p<cr>
+
+" fzf.vim
+noremap <leader>p :Files<cr>
+noremap <leader>g :GFiles<cr>
+noremap <leader>b :Buffers<cr>
+noremap <leader>f :Ag<cr>
+
+" nerdtree
+noremap <leader>e :NERDTreeToggle<cr>
+
+" ============="
+" ===Plugins==="
+" ============="
 call plug#begin('~/.vim/plugged')
+    Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
+    Plug 'junegunn/fzf.vim'
+    Plug 'ggreer/the_silver_searcher'
+    Plug 'preservim/nerdtree'
+    Plug 'tpope/vim-fugitive'
+    Plug 'preservim/nerdcommenter'
+    Plug 'vim-airline/vim-airline'
+    Plug 'ryanoasis/vim-devicons'
+    Plug 'wakatime/vim-wakatime'
 
-Plug 'morhetz/gruvbox'
-Plug 'jremmen/vim-ripgrep'
-Plug 'tpope/vim-fugitive'
-Plug 'leafgarland/typescript-vim'
-Plug 'vim-utils/vim-man'
-" Plug 'lyuts/vim-rtags'
-Plug 'git@github.com:kien/ctrlp.vim.git'
-" Plug 'git@github.com:Valloric/YouCompleteMe.git'
-Plug 'mbbill/undotree'
-Plug 'wakatime/vim-wakatime'
-Plug 'vim-airline/vim-airline'
-Plug 'vim-airline/vim-airline-themes'
-Plug 'preservim/nerdtree' 
-Plug 'Xuyuanp/nerdtree-git-plugin'
-Plug 'ryanoasis/vim-devicons'
-Plug 'preservim/nerdcommenter'
-Plug 'jiangmiao/auto-pairs'
+    " TypeScript
+    Plug 'leafgarland/typescript-vim'
+
+    " CoffeeScript
+    Plug 'kchmck/vim-coffee-script'
+    
+    " JavaScript
+    Plug 'pangloss/vim-javascript'
+    Plug 'maxmellon/vim-jsx-pretty'
+    Plug 'styled-components/vim-styled-components' 
+
+    " Go
+    Plug 'fatih/vim-go'
+
+    " Rust
+    Plug 'rust-lang/rust.vim'
+
+    " Prettifier
+    Plug 'prettier/vim-prettier', {
+      \ 'do': 'yarn install',
+      \ 'for': ['javascript', 'typescript'] }
 
 call plug#end()
 
-colorscheme gruvbox
-set background=dark
+" ============="
+" PluginConfigs"
+" ============="
 
-if executable('rg')
-    let g:rg_drive_root='true'
-endif
+" prettier
+"let g:prettier#config#print_width = 500
 
-let g:airline_theme='gruvbox'
-let g:ctrlp_user_command = ['.git/', 'git --git-dir=%s/.git ls-files -oc --exclude-standard']
-let mapleader = " "
-let g:netrw_browse_split=2
-let g:netrw_banner = 0
-let g:netrw_winsize = 25
-let NERDSpaceDelims = 1
+" fzf.vim
+let g:fzf_colors= {
+      \  'border': ['fg', 'Type' ],
+      \  'gutter': ['fg', 'Type' ] }
 
-let g:ctrlp_use_caching = 0
+" vim-jsx-pretty
+hi jsxAttrib ctermfg=3*
+hi jsxComponentName ctermfg=4*
+hi jsxTagName ctermfg=4*
+hi jsxPunct ctermfg=3*
+hi jsObjectProp ctermfg=3*
+hi jsxCloseString ctermfg=3*
 
-nnoremap <leader>h :wincmd h<CR>
-nnoremap <leader>j :wincmd j<CR>
-nnoremap <leader>k :wincmd k<CR>
-nnoremap <leader>l :wincmd l<CR>
-nnoremap <leader>u :UndotreeShow<CR>
-nnoremap <leader>pv :wincmd v<bar> :Ex <bar> :vertical resize 30<CR>
-nnoremap <leader>pb :NERDTreeToggle<CR>
-nnoremap <leader>ps :Rg<SPACE>
-nnoremap <C-p> :GFiles<CR>
-nnoremap <leader>pf :Files<CR>
-nnoremap <leader><CR> :so ~/.config/nvim/init.vim<CR>
-nnoremap <leader>+ :vertical resize +5<CR>
-nnoremap <leader>- :vertical resize -5<CR>
-" Quickly insert an empty new line without entering insert mode
-nnoremap <Leader>o o<Esc>
-nnoremap <Leader>O O<Esc>
+" typescript-vim
+let g:typescript_indent_disable = 1
+hi javaScriptLineComment ctermfg=4*
 
-" YCM
-" The best part
-" nnoremap <silent> <leader>gd :YcmCompleter Goto<CR>
-" nnoremap <silent> <leader>gf :YcmCompleter FixIt<CR>
+" vim-go
+let g:go_highlight_structs = 1 
+let g:go_highlight_methods = 1
+let g:go_highlight_functions = 1
+let g:go_highlight_operators = 1
+let g:go_highlight_build_constraints = 1
+let g:go_highlight_variable_declarations = 1
+let g:go_highlight_format_strings = 1
+let g:go_highlight_string_spellcheck = 1
+let g:go_highlight_types = 1
+let g:go_highlight_function_calls = 1
+
+" vim-prettier
+let g:prettier#autoformat = 1
+let g:prettier#autoformat_require_pragma = 0
+let g:prettier#config#print_width = '100'
+" Note: Can't get autosave to work on .ts and .tsx
+" files so doing a :Prettier before save hook.
+"autocmd BufWritePre *.tsx,*.ts Prettier 
+
+" ============="
+" ==CustomCmds="
+" ============="
+
+" Absolute path of open file to clipboard
+function! Cwf()
+    let @+=expand('%:p')
+endfunction
+command! Cwf call Cwf()
+
+" Print working file_path
+function! Pfp()
+    echo expand('%')
+endfunction
+command! Pfp call Pfp()
+
+" Relative path of open file to clipboard
+function! Cwfr()
+    let @+=expand('%')
+endfunction
+command! Cwfr call Cwfr()
+
+" ex) :Tag h1
+function! Tag(name)
+    let @"="<" . a:name . "></" . a:name . ">"
+    normal! pbbl
+    startinsert
+endfunction
+command! -nargs=1 Tag call Tag(<f-args>)
+
+" ex) :Jtag HelloWorld
+function! Jtag(name)
+    let @"="<" . a:name . " />"
+    normal! pb
+    startinsert
+endfunction
+command! -nargs=1 Jtag call Jtag(<f-args>)
+
 
 " Try to prevent bad habits like using the arrow keys for movement. This is
 " not the only possible bad habit. For example, holding down the h/j/k/l keys
@@ -97,21 +196,3 @@ inoremap <Left>  <ESC>:echoe "Use h"<CR>
 inoremap <Right> <ESC>:echoe "Use l"<CR>
 inoremap <Up>    <ESC>:echoe "Use k"<CR>
 inoremap <Down>  <ESC>:echoe "Use j"<CR>
-
-" In insert or command mode, move normally by using Ctrl
-inoremap <C-h> <Left>
-inoremap <C-j> <Down>
-inoremap <C-k> <Up>
-inoremap <C-l> <Right>
-cnoremap <C-h> <Left>
-cnoremap <C-j> <Down>
-cnoremap <C-k> <Up>
-cnoremap <C-l> <Right>
-
-" delete without yanking
-nnoremap <leader>d "_d
-vnoremap <leader>d "_d
-
-" replace currently selected text with default register
-" without yanking it
-vnoremap <leader>p "_dP
