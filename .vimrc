@@ -60,6 +60,11 @@ noremap <leader>f :Ag<cr>
 " nerdtree
 noremap <leader>e :NERDTreeToggle<cr>
 
+" NERDCommenter mappping
+let NERDSpaceDelims = 1
+nmap <C-_>   <Plug>NERDCommenterToggle
+vmap <C-_>   <Plug>NERDCommenterToggle<CR>gv
+
 " ============="
 " ===Plugins==="
 " ============="
@@ -73,6 +78,7 @@ call plug#begin('~/.vim/plugged')
     Plug 'vim-airline/vim-airline'
     Plug 'ryanoasis/vim-devicons'
     Plug 'wakatime/vim-wakatime'
+    Plug 'jiangmiao/auto-pairs'
 
     " TypeScript
     Plug 'leafgarland/typescript-vim'
