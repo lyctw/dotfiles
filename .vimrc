@@ -73,6 +73,7 @@ call plug#begin('~/.vim/plugged')
     Plug 'vim-airline/vim-airline'
     Plug 'ryanoasis/vim-devicons'
     Plug 'wakatime/vim-wakatime'
+    Plug 'jiangmiao/auto-pairs'
 
     " TypeScript
     Plug 'leafgarland/typescript-vim'
