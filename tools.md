@@ -29,6 +29,7 @@
             * RSS Reader: [newsboat](https://github.com/newsboat/newsboat)
             * Ctags with vim
                 * install `ctags` 
+                * `ctags -R .` to generate tags
                 * Usage: `<C+]>` `<C+t>`
     * 自訂終端機
         * 安裝zsh

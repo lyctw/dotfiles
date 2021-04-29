@@ -14,6 +14,8 @@ set nobackup
 set incsearch
 set autoindent
 set laststatus=2
+set tags=tags " for ctags
+set cursorline
 
 " File-types
 autocmd BufNewFile,BufRead *.go set filetype=go
