@@ -25,6 +25,9 @@ Run `lxappearance`
 
 Run `nitrogen`
 
+## Lanuch Bluetooth
+
+Run `blueman-applet`
 
 ## Troubleshoot
 
