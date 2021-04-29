@@ -25,6 +25,10 @@ Run `lxappearance`
 
 Run `nitrogen`
 
+## Change login background 
+
+Run `lightdm-settings`
+
 ## Lanuch Bluetooth
 
 Run `blueman-applet`
