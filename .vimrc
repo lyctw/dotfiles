@@ -14,7 +14,7 @@ set nobackup
 set incsearch
 set autoindent
 set laststatus=2
-set tags=tags " for ctags
+set tags=tags " for ctags [Note] run `ctags -R .` to generate tags file
 set cursorline
 
 " File-types
@@ -100,6 +100,9 @@ call plug#begin('~/.vim/plugged')
       \ 'do': 'yarn install',
       \ 'for': ['javascript', 'typescript'] }
 
+    " Auto Complete
+    Plug 'Valloric/YouCompleteMe'
+    
 call plug#end()
 
 " ============="
@@ -158,6 +161,10 @@ let g:ale_c_gcc_options = '-Wall -O2 -std=99'
 "let g:ale_cpp_gcc_options '-Wall -O2 -std=c++17'
 let g:ale_c_cppcheck_options = ''
 let g:ale_cpp_cppcheck_options = ''
+
+" You Complete Me
+let g:ycm_server_python_interpreter='/usr/bin/python'
+let g:ycm_global_ycm_extra_conf='~/.vim/.ycm_extra_conf.py'
 
 " ============="
 " ==CustomCmds="
