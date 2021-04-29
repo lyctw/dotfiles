@@ -18,7 +18,7 @@ URxvt*shading:                  35
 run `lxappearance`
 
 
-## Trobleshooting
+## Troubleshoot
 
 1. [Booting to black screen](ihttps://forum.manjaro.org/t/solved-booting-to-black-screen/45154)
 2. Check out `/etc/default/grub` after `sudo pacman -Syu`
