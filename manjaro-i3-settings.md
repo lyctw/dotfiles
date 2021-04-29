@@ -1,5 +1,5 @@
 
-## urxvt Terminal
+## ~~urxvt Terminal~~
 
 `~/.Xresources`
 
@@ -13,6 +13,14 @@ URxvt*transparent:              true
 URxvt*shading:                  35
 ```
 
+## Terminator
+
+`sudo pacman -S terminator`
+
 ## System font and font size
 
-run `lxappearance`
+Run `lxappearance`
+
+## Change background 
+
+Run `nitrogen`
