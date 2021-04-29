@@ -27,6 +27,9 @@
             * File converter (html to markdown, etc): [pandoc](https://github.com/jgm/pandoc/releases)
             * Command line slides: [mdp](https://github.com/visit1985/mdp)
             * RSS Reader: [newsboat](https://github.com/newsboat/newsboat)
+            * Ctags with vim
+                * install `ctags` 
+                * Usage: `<C+]>` `<C+t>`
     * 自訂終端機
         * 安裝zsh
           https://www.youtube.com/watch?v=4KBuPCeF9Gc
