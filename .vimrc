@@ -28,6 +28,8 @@ autocmd FileType javascript :setlocal sw=2 ts=2 sts=2
 autocmd FileType xml :setlocal sw=2 ts=2 sts=2
 autocmd FileType python :setlocal sw=4 ts=4 sts=4
 autocmd FileType go :setlocal sw=4 ts=4 sts=4
+autocmd FileType c :setlocal sw=4 ts=4 sts=4
+autocmd FileType cpp :setlocal sw=4 ts=4 sts=4
 
 " Make vertical separator pretty
 highlight VertSplit cterm=NONE
