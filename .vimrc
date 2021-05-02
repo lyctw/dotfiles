@@ -14,6 +14,8 @@ set nobackup
 set incsearch
 set autoindent
 set laststatus=2
+set tags=tags " for ctags [Note] run `ctags -R .` to generate tags file
+set cursorline
 
 " File-types
 autocmd BufNewFile,BufRead *.go set filetype=go
@@ -26,6 +28,8 @@ autocmd FileType javascript :setlocal sw=2 ts=2 sts=2
 autocmd FileType xml :setlocal sw=2 ts=2 sts=2
 autocmd FileType python :setlocal sw=4 ts=4 sts=4
 autocmd FileType go :setlocal sw=4 ts=4 sts=4
+autocmd FileType c :setlocal sw=4 ts=4 sts=4
+autocmd FileType cpp :setlocal sw=4 ts=4 sts=4
 
 " Make vertical separator pretty
 highlight VertSplit cterm=NONE
@@ -79,6 +83,8 @@ call plug#begin('~/.vim/plugged')
     Plug 'ryanoasis/vim-devicons'
     Plug 'wakatime/vim-wakatime'
     Plug 'jiangmiao/auto-pairs'
+    Plug 'octol/vim-cpp-enhanced-highlight'
+    Plug 'w0rp/ale' " Syntex checker
 
     " TypeScript
     Plug 'leafgarland/typescript-vim'
@@ -102,6 +108,9 @@ call plug#begin('~/.vim/plugged')
       \ 'do': 'yarn install',
       \ 'for': ['javascript', 'typescript'] }
 
+    " Auto Complete
+    Plug 'Valloric/YouCompleteMe'
+    
 call plug#end()
 
 " ============="
@@ -147,6 +156,23 @@ let g:prettier#config#print_width = '100'
 " Note: Can't get autosave to work on .ts and .tsx
 " files so doing a :Prettier before save hook.
 "autocmd BufWritePre *.tsx,*.ts Prettier 
+
+" Syntax Checker
+let g:ale_sign_column_always = 1
+let g:ale_sign_error = 'X'
+let g:ale_sign_warning = '!'
+let g:ale_statusline_format = ['X %d', 'N %d', 'V OK']
+let g:ale_echo_msg_format = '[%linter%] %code: %%s'
+let g:ale_lint_on_text_changed = 'normal'
+let g:ale_lint_on_insert_leave = 1
+let g:ale_c_gcc_options = '-Wall -O2 -std=99'
+"let g:ale_cpp_gcc_options '-Wall -O2 -std=c++17'
+let g:ale_c_cppcheck_options = ''
+let g:ale_cpp_cppcheck_options = ''
+
+" You Complete Me
+let g:ycm_server_python_interpreter='/usr/bin/python'
+let g:ycm_global_ycm_extra_conf='~/.vim/.ycm_extra_conf.py'
 
 " ============="
 " ==CustomCmds="
