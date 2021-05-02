@@ -131,7 +131,7 @@ function cd () {
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
 # Fast Syntax Highlighting (F-Sy-H) 
- source ~/.zsh/fast-syntax-highlighting/fast-syntax-highlighting.plugin.zsh
+source ~/.oh-my-zsh/custom/plugins/fast-syntax-highlighting/fast-syntax-highlighting.plugin.zsh
 
 # Add RVM to PATH for scripting. Make sure this is the last PATH variable change.
 export PATH="$PATH:$HOME/.rvm/bin"
