@@ -66,8 +66,8 @@ noremap <leader>e :NERDTreeToggle<cr>
 
 " NERDCommenter mappping
 let NERDSpaceDelims = 1
-nmap <C-_>   <Plug>NERDCommenterToggle
-vmap <C-_>   <Plug>NERDCommenterToggle<CR>gv
+" nmap <C-_>   <Plug>NERDCommenterToggle
+" vmap <C-_>   <Plug>NERDCommenterToggle<CR>gv
 
 " ============="
 " ===Plugins==="
@@ -83,8 +83,11 @@ call plug#begin('~/.vim/plugged')
     Plug 'ryanoasis/vim-devicons'
     Plug 'wakatime/vim-wakatime'
     Plug 'jiangmiao/auto-pairs'
-    Plug 'octol/vim-cpp-enhanced-highlight'
     Plug 'w0rp/ale' " Syntex checker
+
+    " C/C++
+    Plug 'octol/vim-cpp-enhanced-highlight'
+    Plug 'justinmk/vim-syntax-extra' 
 
     " TypeScript
     Plug 'leafgarland/typescript-vim'
