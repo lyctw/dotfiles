@@ -16,6 +16,7 @@ set autoindent
 set laststatus=2
 set tags=tags " for ctags [Note] run `ctags -R .` to generate tags file
 set cursorline
+set formatoptions-=cro " disable auto comment [BUG] this line doesn't work
 
 " File-types
 autocmd BufNewFile,BufRead *.go set filetype=go
@@ -160,7 +161,7 @@ let g:prettier#config#print_width = '100'
 " files so doing a :Prettier before save hook.
 "autocmd BufWritePre *.tsx,*.ts Prettier 
 
-" Syntax Checker
+" C/C++ Syntax Checker
 let g:ale_sign_column_always = 1
 let g:ale_sign_error = 'X'
 let g:ale_sign_warning = '!'
