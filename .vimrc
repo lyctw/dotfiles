@@ -74,6 +74,7 @@ let NERDSpaceDelims = 1
 " ===Plugins==="
 " ============="
 call plug#begin('~/.vim/plugged')
+    Plug 'morhetz/gruvbox'
     Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
     Plug 'junegunn/fzf.vim'
     Plug 'ggreer/the_silver_searcher'
@@ -81,6 +82,7 @@ call plug#begin('~/.vim/plugged')
     Plug 'tpope/vim-fugitive'
     Plug 'preservim/nerdcommenter'
     Plug 'vim-airline/vim-airline'
+    Plug 'vim-airline/vim-airline-themes'
     Plug 'ryanoasis/vim-devicons'
     Plug 'wakatime/vim-wakatime'
     Plug 'jiangmiao/auto-pairs'
@@ -120,6 +122,11 @@ call plug#end()
 " ============="
 " PluginConfigs"
 " ============="
+
+" gruvbox theme
+colorscheme gruvbox
+set background=dark
+autocmd VimEnter * hi Normal ctermbg=none " make it transparent
 
 " prettier
 "let g:prettier#config#print_width = 500
