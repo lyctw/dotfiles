@@ -17,6 +17,11 @@ URxvt*shading:                  35
 
 `sudo pacman -S terminator`
 
+## Change default browser from Pale Moon to Brave
+
+Edit `vim ~/.config/mimeapps.list`
+
+
 ## System font and font size
 
 Run `lxappearance`
