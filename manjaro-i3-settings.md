@@ -52,4 +52,12 @@ sudo vim /usr/share/conky/conky1.10_shortcuts_maia
     * add `iommu=soft` to `GRUB_CMDLINE_LINUX_DEFAULT`
     * `sudo update-grub`
 
+## Install [i3-battery-popup](https://github.com/rjekker/i3-battery-popup) from AUR
+
+
+```
+sudo pamac build i3-battery-popup
+```
+
+
 
