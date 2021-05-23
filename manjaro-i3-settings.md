@@ -41,7 +41,7 @@ Run `blueman-applet`
 ## CPU and shortcut infomations font size
 
 ```
-sudo vim /usr/share/conky/conky_maia                                                           18s 16:14:18
+sudo vim /usr/share/conky/conky_maia  
 sudo vim /usr/share/conky/conky1.10_shortcuts_maia
 ```
 

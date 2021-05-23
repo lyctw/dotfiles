@@ -286,7 +286,7 @@ mode "resize" {
 exec --no-startup-id /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1
 exec --no-startup-id nitrogen --restore; sleep 1; picom -b
 exec --no-startup-id sleep 3; xfce4-power-manager
-exec --no-startup-id systemctl start docker  
+exec --no-startup-id systemctl start docker   # [BUG] doesn't work
 #exec --no-startup-id manjaro-hello
 exec --no-startup-id nm-applet
 exec --no-startup-id blueman-applet
@@ -301,8 +301,9 @@ exec_always --no-startup-id ff-theme-util
 exec_always --no-startup-id fix_xcursor
 
 # Autostart at specific workspace
-# exec --no-startup-id i3-msg 'workspace 1; exec /usr/bin/terminator'
+exec --no-startup-id i3-msg 'workspace 1; exec /usr/bin/terminator'
 exec --no-startup-id i3-msg 'workspace 2; exec /usr/bin/brave'
+exec --no-startup-id i3-msg 'workspace 5; exec ~/Apps/Obsidian-0.11.13.AppImage'
 
 # Color palette used for the terminal ( ~/.Xresources file )
 # Colors are gathered based on the documentation:
