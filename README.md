@@ -43,6 +43,8 @@ git clone https://github.com/zdharma/fast-syntax-highlighting.git \
   ${ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom}/plugins/fast-syntax-highlighting
 ```
 
+Make sure `fast-syntax-highlighting` has been add to plugin list in `~/.zshrc`.
+
 
 5. Create `.zshrc` symlink
 
