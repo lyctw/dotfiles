@@ -1,5 +1,6 @@
 # dotfiles
 
+<!--
 My configuration files for:
 
 * Bash
@@ -16,6 +17,7 @@ My configuration files for:
 There is also a [script](https://github.com/JJGO/dotfiles/blob/master/shell-setup.sh) for easy simlinking the dotfiles
 
 <hr>
+-->
 
 ## Oh my zsh
 
@@ -41,7 +43,6 @@ git clone https://github.com/zdharma/fast-syntax-highlighting.git \
   ${ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom}/plugins/fast-syntax-highlighting
 ```
 
-  And add `fast-syntax-highlighting` to your plugin list.
 
 5. Create `.zshrc` symlink
 
