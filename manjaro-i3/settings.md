@@ -1,4 +1,6 @@
 
+`.i3/config` or `.config/i3/config` ??????????
+
 ## ~~urxvt Terminal~~
 
 `~/.Xresources`
