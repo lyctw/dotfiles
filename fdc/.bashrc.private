@@ -2,6 +2,7 @@ cd /local/peterlin
 export TERMINFO=/usr/share/terminfo
 export TERM=xterm-color
 
+# Make zsh as default shell without root permission
 export SHELL=/bin/zsh
 exec /bin/zsh -l
 

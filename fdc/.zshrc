@@ -148,3 +148,9 @@ source ~/.oh-my-zsh/custom/plugins/fast-syntax-highlighting/fast-syntax-highligh
 
 # Goto workspace 
 cd /local/peterlin
+
+# Reset PATH
+# Origin: /home/project/eda/bin:/home/project/utils/bin:/bin:/usr/bin:/usr/X11R6/bin:/home/users3/peterlin/bin:.:/home/users3/peterlin/.fzf/bin
+export PATH=/bin:/usr/bin:/usr/X11R6/bin:/home/users3/peterlin/bin:.:/home/users3/peterlin/.fzf/bin
+
+
