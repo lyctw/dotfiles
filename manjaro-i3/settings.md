@@ -77,7 +77,8 @@ Install ibus-mozc from AUR
 sudo pamac build ibus-mozc
 ```
 
-Righ click the bottom right icon of ibus > Preferences > Add Chewing & Mozc
+Righ click the bottom right icon of ibus > Preferences > Add Chewing & Mozc.
+
 Then logout or reboot to take effect.
 
 ![](https://i.imgur.com/D4uu8Xl.png)
