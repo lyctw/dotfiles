@@ -63,6 +63,23 @@ sudo pacman -S xfce4-power-manager
 ```
 
 
+## Input Methods
+
+Install ibus-chewing
+
+```
+sudo pacmac -S ibus ibus-chewing
+```
+
+Install ibus-mozc from AUR
+
+```
+sudo pamac build ibus-mozc
+```
+
+Righ click the bottom right icon of ibus > Preferences > Add Chewing & Mozc
+![](https://i.imgur.com/D4uu8Xl.png)
+
 
 
 
