@@ -303,7 +303,7 @@ exec_always --no-startup-id fix_xcursor
 # Autostart at specific workspace
 exec --no-startup-id i3-msg 'workspace 1; exec /usr/bin/terminator'
 exec --no-startup-id i3-msg 'workspace 2; exec /usr/bin/brave'
-exec --no-startup-id i3-msg 'workspace 5; exec ~/Apps/Obsidian-0.11.13.AppImage'
+exec --no-startup-id i3-msg 'workspace 5; exec /usr/bin/obsidian'
 
 # Color palette used for the terminal ( ~/.Xresources file )
 # Colors are gathered based on the documentation:
