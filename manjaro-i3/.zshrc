@@ -116,7 +116,6 @@ alias grep='grep --color=auto'
 alias mkdir='mkdir -pv'
 alias mv='mv -v'
 alias wget='wget -c'
-alias obsidian="~/Apps/obsidian_launcher.sh"
 
 # Use programs without a root-equivalent group
 alias docker='sudo docker'

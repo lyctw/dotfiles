@@ -30,7 +30,7 @@ Run `lxappearance`
 
 ## Change background 
 
-Run `nitrogen`
+Run `nitrogen` or `lightdm-settings`
 
 ## Change login background 
 
