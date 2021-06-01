@@ -8,29 +8,27 @@ exec /bin/zsh -l
 
 ## Get into zsh, commands below won't work.
 
-export http_proxy=http://10.0.1.18:3128/
-export https_proxy=http://10.0.1.18:3128/
-export ftp_proxy=http://10.0.1.18:3128/
-export ftp_proxy=http://10.0.1.18:3128/
+# export http_proxy=http://10.0.1.18:3128/
+# export https_proxy=http://10.0.1.18:3128/
+# export ftp_proxy=http://10.0.1.18:3128/
+# export ftp_proxy=http://10.0.1.18:3128/
 
-parse_git_branch() {
-     git branch 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/(\1)/'
-}
+# parse_git_branch() {
+     # git branch 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/(\1)/'
+# }
 
-export PS1="\[\e[1;36m\]\u@\h \[\e[32m\]\W \[\e[91m\]\$(parse_git_branch)\[\e[00m\]$ "
+# export PS1="\[\e[1;36m\]\u@\h \[\e[32m\]\W \[\e[91m\]\$(parse_git_branch)\[\e[00m\]$ "
 
-PATH=$PATH:/usr/sbin:/sbin
+# PATH=$PATH:/usr/sbin:/sbin
 
-# command-line fuzzy finder
-[ -f ~/.fzf.bash ] && source ~/.fzf.bash
-export FZF_DEFAULT_OPTS="--ansi --preview-window 'right:60%' --preview 'bat --color=always --style=header,grid --line-range :300 {}'"
+# # command-line fuzzy finder
+# [ -f ~/.fzf.bash ] && source ~/.fzf.bash
+# export FZF_DEFAULT_OPTS="--ansi --preview-window 'right:60%' --preview 'bat --color=always --style=header,grid --line-range :300 {}'"
 
 
-alias wget="https_proxy='https://cache1:3128' wget -c"
+# alias wget="https_proxy='https://cache1:3128' wget -c"
 
-function cd () {
-  builtin cd "$1"
-  ls -ACF
-}
-
-# zsh
+# function cd () {
+  # builtin cd "$1"
+  # ls -ACF
+# }
