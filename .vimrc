@@ -14,7 +14,7 @@ set nobackup
 set incsearch
 set autoindent
 set laststatus=2
-set tags=tags " for ctags [Note] run `ctags -R .` to generate tags file
+set tags=./tags,./TAGS,tags;~,TAGS;~ " for ctags [Note] run `ctags -R .` to generate tags file
 set cursorline
 set formatoptions-=cro " disable auto comment [BUG] this line doesn't work
 
@@ -34,7 +34,7 @@ autocmd FileType cpp :setlocal sw=4 ts=4 sts=4
 
 " Make vertical separator pretty
 highlight VertSplit cterm=NONE
-set fillchars+=vert:\▏
+set fillchars+=vert:\|
 
 " Get rid of unnecessary highlight for spelling
 highlight clear SpellBad
@@ -115,7 +115,7 @@ call plug#begin('~/.vim/plugged')
       \ 'for': ['javascript', 'typescript'] }
 
     " Auto Complete
-    Plug 'Valloric/YouCompleteMe'
+    " Plug 'Valloric/YouCompleteMe'
     
 call plug#end()
 
@@ -223,6 +223,25 @@ function! Jtag(name)
 endfunction
 command! -nargs=1 Jtag call Jtag(<f-args>)
 
+" CSCOPE
+set cscopetag
+set csto=0
+
+if filereadable("cscope.out")
+   cs add cscope.out   
+elseif $CSCOPE_DB != ""
+    cs add $CSCOPE_DB
+endif
+set cscopeverbose
+
+nmap zs :cs find s <C-R>=expand("<cword>")<CR><CR>
+nmap zg :cs find g <C-R>=expand("<cword>")<CR><CR>
+nmap zc :cs find c <C-R>=expand("<cword>")<CR><CR>
+nmap zt :cs find t <C-R>=expand("<cword>")<CR><CR>
+nmap ze :cs find e <C-R>=expand("<cword>")<CR><CR>
+nmap zf :cs find f <C-R>=expand("<cfile>")<CR><CR>
+nmap zi :cs find i ^<C-R>=expand("<cfile>")<CR>$<CR>
+nmap zd :cs find d <C-R>=expand("<cword>")<CR><CR>
 
 " Try to prevent bad habits like using the arrow keys for movement. This is
 " not the only possible bad habit. For example, holding down the h/j/k/l keys
