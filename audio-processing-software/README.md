@@ -8,7 +8,9 @@ sonic-visualiser plugins:
 
 * Chord estimate - Chordino and NNLS Chroma
 * Key detection - Queen Mary plugin set
-* Low-pass filter - ??
+* Low-pass filter - invada-studio-plugins
+  * removed from plugins and failed to load into sonic-visualiser
+  * `sudo pacman -S extra/ladspa` for compiling to source code
 
 ## Install [Queen Mary plugin set](https://www.vamp-plugins.org/download.html?platform=linux64&search=Queen+Mary+plugin+set&go=Go)
 
