@@ -78,7 +78,6 @@ call plug#begin('~/.vim/plugged')
     Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
     Plug 'junegunn/fzf.vim'
     Plug 'ggreer/the_silver_searcher'
-    Plug 'preservim/nerdtree'
     Plug 'tpope/vim-fugitive'
     Plug 'preservim/nerdcommenter'
     Plug 'vim-airline/vim-airline'
@@ -87,6 +86,13 @@ call plug#begin('~/.vim/plugged')
     Plug 'wakatime/vim-wakatime'
     Plug 'jiangmiao/auto-pairs'
     Plug 'w0rp/ale' " Syntex checker
+
+    " For tracing Kernel code
+    Plug 'preservim/nerdtree' 
+    Plug 'vim-scripts/taglist.vim'
+    Plug 'wesleyche/SrcExpl' " Show function declarations of file
+    Plug 'wesleyche/Trinity'
+    
 
     " C/C++
     Plug 'octol/vim-cpp-enhanced-highlight'
@@ -242,6 +248,28 @@ nmap ze :cs find e <C-R>=expand("<cword>")<CR><CR>
 nmap zf :cs find f <C-R>=expand("<cfile>")<CR><CR>
 nmap zi :cs find i ^<C-R>=expand("<cfile>")<CR>$<CR>
 nmap zd :cs find d <C-R>=expand("<cword>")<CR><CR>
+
+" TagList
+nmap <F8> :TlistToggle<CR><CR>
+let Tlist_Show_One_File=1
+let Tlist_Exit_OnlyWindow=1
+set ut=100
+
+" NERDTree
+nmap <F9> :NERDTreeFind<CR><CR>
+let NERDTreeWinPos=1
+
+" SrcExpl
+nmap <F10> :SrcExplToggle<CR>
+let g:SrcExpl_pluginList = [
+        \ "__Tag_List__",
+        \ "_NERD_tree_"
+        \ ]
+
+" Trinity
+nmap <F7> :TrinityToggleAll<CR>
+
+
 
 " Try to prevent bad habits like using the arrow keys for movement. This is
 " not the only possible bad habit. For example, holding down the h/j/k/l keys
