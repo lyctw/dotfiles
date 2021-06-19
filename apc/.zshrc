@@ -11,7 +11,7 @@ fi
 # Path to your oh-my-zsh installation.
 export ZSH="/home/peterlin/.oh-my-zsh"
 
-export GIT_SSH="ssh -i ~/.ssh/id_rsa  -J atcfdc88 $@"
+export GIT_SSH="/home/peterlin/Github_repos/dotfiles/apc/proxy_jump.sh"
 
 
 # Set name of the theme to load --- if set to "random", it will
