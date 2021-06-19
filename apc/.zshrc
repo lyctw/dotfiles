@@ -12,6 +12,10 @@ fi
 export ZSH="/home/peterlin/.oh-my-zsh"
 
 export GIT_SSH="/home/peterlin/Github_repos/dotfiles/apc/proxy_jump.sh"
+export http_proxy=http://10.0.1.18:3128/
+export https_proxy=http://10.0.1.18:3128/
+export ftp_proxy=http://10.0.1.18:3128/
+
 
 
 # Set name of the theme to load --- if set to "random", it will
