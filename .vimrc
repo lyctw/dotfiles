@@ -45,10 +45,16 @@ highlight clear SpellBad
 let mapleader = " "
 
 " Pane navigation
-noremap <C-J> <C-W><C-J>
-noremap <C-K> <C-W><C-K>
-noremap <C-L> <C-W><C-L>
-noremap <C-H> <C-W><C-H>
+" noremap <C-J> <C-W><C-J>
+" noremap <C-K> <C-W><C-K>
+" noremap <C-L> <C-W><C-L>
+" noremap <C-H> <C-W><C-H>
+
+" Window navigation
+nnoremap <leader>h :wincmd h<CR>                                                                                                            
+nnoremap <leader>j :wincmd j<CR>
+nnoremap <leader>k :wincmd k<CR>
+nnoremap <leader>l :wincmd l<CR>
 
 " Copy to system clipboard
 noremap <leader>c "*yy<cr>
