@@ -64,7 +64,6 @@ Download and install [MesloLGS NF Regular](https://github.com/romkatv/powerlevel
 
 ```
 git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions
-git clone https://github.com/paulirish/git-open.git $ZSH_CUSTOM/plugins/git-open
 ```
 
 8. Set the `ZSH_TMUX_AUTOSTART` variable

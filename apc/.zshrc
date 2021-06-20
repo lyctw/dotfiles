@@ -82,7 +82,7 @@ ZSH_THEME="powerlevel10k/powerlevel10k"
 # Custom plugins may be added to $ZSH_CUSTOM/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git colored-man-pages zsh-autosuggestions git-open tmux)
+plugins=(git colored-man-pages zsh-autosuggestions tmux)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -140,7 +140,7 @@ function cd () {
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
 # Fast Syntax Highlighting (F-Sy-H) 
- source ~/.zsh/fast-syntax-highlighting/fast-syntax-highlighting.plugin.zsh
+source ~/.oh-my-zsh/custom/plugins/fast-syntax-highlighting
 
 # Add RVM to PATH for scripting. Make sure this is the last PATH variable change.
 export PATH="$PATH:$HOME/.rvm/bin"
@@ -149,4 +149,3 @@ export PATH="$PATH:$HOME/.rvm/bin"
 VERSION=v11.15.0
 DISTRO=linux-x64
 export PATH=/usr/local/lib/nodejs/node-$VERSION-$DISTRO/bin:$PATH
-
