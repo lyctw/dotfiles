@@ -8,21 +8,66 @@ fi
 # If you come from bash you might have to change your $PATH.
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
 
+export GIT_SSH="/home/peterlin/Github_repos/dotfiles/apc/proxy_jump.sh"
+# export http_proxy=http://10.0.1.18:3128/
+# export https_proxy=http://10.0.1.18:3128/
+# export ftp_proxy=http://10.0.1.18:3128/
+
+function proxy_on() {
+    export no_proxy="localhost,127.0.0.1,localaddress,.localdomain.com"
+
+    if (( $# > 0 )); then
+        valid=$(echo $@ | sed -n 's/\([0-9]\{1,3\}.\?\)\{4\}:\([0-9]\+\)/&/p')
+        if [[ $valid != $@ ]]; then
+            >&2 echo "Invalid address"
+            return 1
+        fi
+        local proxy=$1
+        export http_proxy="$proxy" \
+               https_proxy=$proxy \
+               ftp_proxy=$proxy \
+               rsync_proxy=$proxy
+        echo "Proxy environment variable set."
+        return 0
+    fi
+
+    echo -n "username: "; read username
+    if [[ $username != "" ]]; then
+        echo -n "password: "
+        read -es password
+        local pre="$username:$password@"
+    fi
+
+    echo -n "server: "; read server
+    echo -n "port: "; read port
+    local proxy=$pre$server:$port
+    export http_proxy="$proxy" \
+           https_proxy=$proxy \
+           ftp_proxy=$proxy \
+           rsync_proxy=$proxy \
+           HTTP_PROXY=$proxy \
+           HTTPS_PROXY=$proxy \
+           FTP_PROXY=$proxy \
+           RSYNC_PROXY=$proxy
+}
+
+function proxy_off(){
+    unset http_proxy https_proxy ftp_proxy rsync_proxy \
+          HTTP_PROXY HTTPS_PROXY FTP_PROXY RSYNC_PROXY
+    echo -e "Proxy environment variable removed."
+}
+
+proxy_on http://10.0.1.18:3128
+
 # Path to your oh-my-zsh installation.
 export ZSH="/home/peterlin/.oh-my-zsh"
-
-export GIT_SSH="/home/peterlin/Github_repos/dotfiles/apc/proxy_jump.sh"
-export http_proxy=http://10.0.1.18:3128/
-export https_proxy=http://10.0.1.18:3128/
-export ftp_proxy=http://10.0.1.18:3128/
-
-
 
 # Set name of the theme to load --- if set to "random", it will
 # load a random theme each time oh-my-zsh is loaded, in which case,
 # to know which specific one was loaded, run: echo $RANDOM_THEME
 # See https://github.com/ohmyzsh/ohmyzsh/wiki/Themes
-ZSH_THEME="powerlevel10k/powerlevel10k"
+ZSH_THEME="robbyrussell"
+# ZSH_THEME="powerlevel10k/powerlevel10k"
 
 # Set list of themes to pick from when loading at random
 # Setting this variable when ZSH_THEME=random will cause zsh to load
@@ -59,6 +104,8 @@ ZSH_THEME="powerlevel10k/powerlevel10k"
 # ENABLE_CORRECTION="true"
 
 # Uncomment the following line to display red dots whilst waiting for completion.
+# Caution: this setting can cause issues with multiline prompts (zsh 5.7.1 and newer seem to work)
+# See https://github.com/ohmyzsh/ohmyzsh/issues/5765
 # COMPLETION_WAITING_DOTS="true"
 
 # Uncomment the following line if you want to disable marking untracked files
@@ -119,9 +166,6 @@ alias grep='grep --color=auto'
 alias mkdir='mkdir -pv'
 alias mv='mv -v'
 alias wget='wget -c'
-alias tldr="https_proxy='http://cache1:3128' tldr"
-alias obsidian="~/Apps/Obsidian-0.11.13.AppImage &"
-
 
 # Use programs without a root-equivalent group
 alias docker='sudo docker'
@@ -139,13 +183,6 @@ function cd () {
 # command-line fuzzy finder
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
-# Fast Syntax Highlighting (F-Sy-H) 
-source ~/.oh-my-zsh/custom/plugins/fast-syntax-highlighting
+# Fast Syntax Highlighting (F-Sy-H)
+source ~/.oh-my-zsh/custom/plugins/fast-syntax-highlighting/fast-syntax-highlighting.plugin.zsh
 
-# Add RVM to PATH for scripting. Make sure this is the last PATH variable change.
-export PATH="$PATH:$HOME/.rvm/bin"
-
-# Nodejs
-VERSION=v11.15.0
-DISTRO=linux-x64
-export PATH=/usr/local/lib/nodejs/node-$VERSION-$DISTRO/bin:$PATH
