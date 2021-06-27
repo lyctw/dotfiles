@@ -435,8 +435,3 @@ mode "$mode_gaps_outer" {
         bindsym Return mode "default"
         bindsym Escape mode "default"
 }
-
-
-# Wallpaper
-#exec_always --no-startup-id feh --bg-scale ~/Pictures/Green-Tropical-Plant-Wallpaper-Mural-Plain.webp
-
