@@ -68,7 +68,7 @@ sudo pacman -S xfce4-power-manager
 Install ibus-chewing
 
 ```
-sudo pacmac -S ibus ibus-chewing
+sudo pacman -S ibus ibus-chewing
 ```
 
 Install ibus-mozc from AUR
