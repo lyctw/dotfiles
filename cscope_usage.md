@@ -9,3 +9,5 @@
   * `zi`: includes, find files that include the filename under cursor
   * `zd`: called, find functions that function under cursor calls
 
+
+debug kernel: `make tags cscope TAGS`
