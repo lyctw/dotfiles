@@ -92,7 +92,7 @@ call plug#begin('~/.vim/plugged')
     Plug 'ryanoasis/vim-devicons'
     Plug 'wakatime/vim-wakatime'
     Plug 'jiangmiao/auto-pairs'
-    Plug 'w0rp/ale' " Syntex checker
+    " Plug 'w0rp/ale' " Syntex checker
 
     " C/C++
     Plug 'octol/vim-cpp-enhanced-highlight'
@@ -121,7 +121,7 @@ call plug#begin('~/.vim/plugged')
       \ 'for': ['javascript', 'typescript'] }
 
     " Auto Complete
-    " Plug 'Valloric/YouCompleteMe'
+    Plug 'Valloric/YoCompleteMe'
     
 call plug#end()
 
