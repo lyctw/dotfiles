@@ -77,12 +77,23 @@ Install ibus-mozc from AUR
 sudo pamac build ibus-mozc
 ```
 
-Righ click the bottom right icon of ibus > Preferences > Add Chewing & Mozc.
-
-Then logout or reboot to take effect.
+Righ click the bottom right ibus icon > Preferences > Add Chewing & Mozc.
 
 ![](https://i.imgur.com/D4uu8Xl.png)
 
+```
+vim ~/.profile
+```
 
+```
+export XMODIFIERS="@im=ibus"
+export XMODIFIER="@im=ibus"
+export GTK_IM_MODULE=ibus
+export QT_IM_MODULE=ibus
+export DefaultIMModule=ibus
+ibus-daemon -drx
+```
+
+Then logout or reboot to take effect.
 
 

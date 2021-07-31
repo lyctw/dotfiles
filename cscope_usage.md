@@ -10,4 +10,6 @@
   * `zd`: called, find functions that function under cursor calls
 
 
-debug kernel: `make tags cscope TAGS`
+
+* Debug kernel: `make O=. ARCH=riscv COMPILED_SOURCE=1 cscope tags` 
+  * [Vim configuration for Linux kernel development](https://stackoverflow.com/questions/33676829/vim-configuration-for-linux-kernel-development)
