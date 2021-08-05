@@ -11,5 +11,7 @@
 
 
 
-* Debug kernel: `make O=. ARCH=riscv COMPILED_SOURCE=1 cscope tags` 
-  * [Vim configuration for Linux kernel development](https://stackoverflow.com/questions/33676829/vim-configuration-for-linux-kernel-development)
+* Debug kernel: 
+  * `make O=. ARCH=riscv COMPILED_SOURCE=1 cscope tags` 
+  * `make O=. ARCH=arm SUBARCH=omap2 COMPILED_SOURCE=1 cscope tags`
+  * Ref: [Vim configuration for Linux kernel development](https://stackoverflow.com/questions/33676829/vim-configuration-for-linux-kernel-development)
