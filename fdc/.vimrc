@@ -17,6 +17,7 @@ set laststatus=2
 set tags=./tags,./TAGS,tags;~,TAGS;~ " for ctags [Note] run `ctags -R .` to generate tags file
 set cursorline
 set formatoptions-=cro " disable auto comment [BUG] this line doesn't work
+set encoding=utf-8
 
 " File-types
 autocmd BufNewFile,BufRead *.go set filetype=go
@@ -44,11 +45,11 @@ highlight clear SpellBad
 " ============== "
 let mapleader = " "
 
-" Pane navigation
-noremap <C-J> <C-W><C-J>
-noremap <C-K> <C-W><C-K>
-noremap <C-L> <C-W><C-L>
-noremap <C-H> <C-W><C-H>
+" Window navigation
+nnoremap <leader>h :wincmd h<CR>                                                                                                            
+nnoremap <leader>j :wincmd j<CR>
+nnoremap <leader>k :wincmd k<CR>
+nnoremap <leader>l :wincmd l<CR>
 
 " Copy to system clipboard
 noremap <leader>c "*yy<cr>
@@ -74,7 +75,9 @@ let NERDSpaceDelims = 1
 " ===Plugins==="
 " ============="
 call plug#begin('~/.vim/plugged')
+    " Color schema
     Plug 'ayu-theme/ayu-vim'
+
     Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
     Plug 'junegunn/fzf.vim'
     Plug 'ggreer/the_silver_searcher'
@@ -127,8 +130,6 @@ call plug#end()
 set termguicolors     " enable true colors support
 let ayucolor="dark"   " for dark version of theme
 colorscheme ayu
-
-autocmd VimEnter * hi Normal ctermbg=none " make it transparent
 
 " prettier
 "let g:prettier#config#print_width = 500
