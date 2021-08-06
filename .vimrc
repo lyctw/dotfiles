@@ -45,12 +45,6 @@ highlight clear SpellBad
 " ============== "
 let mapleader = " "
 
-" Pane navigation
-" noremap <C-J> <C-W><C-J>
-" noremap <C-K> <C-W><C-K>
-" noremap <C-L> <C-W><C-L>
-" noremap <C-H> <C-W><C-H>
-
 " Window navigation
 nnoremap <leader>h :wincmd h<CR>                                                                                                            
 nnoremap <leader>j :wincmd j<CR>
@@ -81,7 +75,9 @@ let NERDSpaceDelims = 1
 " ===Plugins==="
 " ============="
 call plug#begin('~/.vim/plugged')
-    Plug 'morhetz/gruvbox'
+    " Color schema
+    Plug 'ayu-theme/ayu-vim'
+
     Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
     Plug 'junegunn/fzf.vim'
     Plug 'ggreer/the_silver_searcher'
@@ -130,10 +126,10 @@ call plug#end()
 " PluginConfigs"
 " ============="
 
-" gruvbox theme
-colorscheme gruvbox
-set background=dark
-autocmd VimEnter * hi Normal ctermbg=none " make it transparent
+" ayu theme
+set termguicolors     " enable true colors support
+let ayucolor="dark"   " for dark version of theme
+colorscheme ayu
 
 " prettier
 "let g:prettier#config#print_width = 500
