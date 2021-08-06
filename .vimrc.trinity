@@ -74,7 +74,9 @@ let NERDSpaceDelims = 1
 " ===Plugins==="
 " ============="
 call plug#begin('~/.vim/plugged')
-    Plug 'morhetz/gruvbox'
+    " Color schema
+    Plug 'ayu-theme/ayu-vim'
+
     Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
     Plug 'junegunn/fzf.vim'
     Plug 'ggreer/the_silver_searcher'
@@ -129,9 +131,10 @@ call plug#end()
 " PluginConfigs"
 " ============="
 
-" gruvbox theme
-colorscheme gruvbox
-set background=dark
+" ayu theme
+set termguicolors     " enable true colors support
+let ayucolor="dark"   " for dark version of theme
+colorscheme ayu
 autocmd VimEnter * hi Normal ctermbg=none " make it transparent
 
 " prettier
