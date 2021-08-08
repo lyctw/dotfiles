@@ -127,7 +127,7 @@ alias mkdir='mkdir -pv'
 alias mv='mv -v'
 alias wget='wget -c'
 alias rgr='ranger'
-alias tmux='tmux -u'
+alias tmux='tmux -u -2'
 
 # Use programs without a root-equivalent group
 alias docker='sudo docker'

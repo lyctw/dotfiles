@@ -87,7 +87,7 @@ call plug#begin('~/.vim/plugged')
     Plug 'preservim/nerdcommenter'
     Plug 'vim-airline/vim-airline'
     Plug 'vim-airline/vim-airline-themes'
-    " Plug 'ryanoasis/vim-devicons'
+    Plug 'ryanoasis/vim-devicons'
     Plug 'wakatime/vim-wakatime'
     Plug 'jiangmiao/auto-pairs'
     " Plug 'w0rp/ale' " Syntex checker
