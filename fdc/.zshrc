@@ -8,8 +8,10 @@ fi
 export TERMINFO=/usr/share/terminfo
 export TERM=xterm-color
 
+export EDITOR=vim
+
 # If you come from bash you might have to change your $PATH.
-export PATH=$HOME/bin:/usr/local/bin:/usr/sbin:/sbin:$PATH
+# export PATH=$HOME/bin:/usr/local/bin:/usr/sbin:/sbin:$PATH:$HOME/bash_zsh_switch
 
 # Path to your oh-my-zsh installation.
 export ZSH="/home/users3/peterlin/.oh-my-zsh"
@@ -124,6 +126,8 @@ alias grep='grep --color=auto'
 alias mkdir='mkdir -pv'
 alias mv='mv -v'
 alias wget='wget -c'
+alias rgr='ranger'
+alias tmux='tmux -u'
 
 # Use programs without a root-equivalent group
 alias docker='sudo docker'
@@ -141,16 +145,14 @@ function cd () {
 
 # command-line fuzzy finder
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
-export FZF_DEFAULT_OPTS="--ansi --preview-window 'right:60%' --preview 'bat --color=always --style=header,grid --line-range :300 {}'"
+# export FZF_DEFAULT_OPTS="--ansi --preview-window 'right:60%' --preview 'bat --color=always --style=header,grid --line-range :300 {}'"
 
 # Fast Syntax Highlighting (F-Sy-H)
 source ~/.oh-my-zsh/custom/plugins/fast-syntax-highlighting/fast-syntax-highlighting.plugin.zsh
 
-# Goto workspace 
-cd /local/peterlin
-
 # Reset PATH
 # Origin: /home/project/eda/bin:/home/project/utils/bin:/bin:/usr/bin:/usr/X11R6/bin:/home/users3/peterlin/bin:.:/home/users3/peterlin/.fzf/bin
-export PATH=/bin:/usr/bin:/usr/X11R6/bin:/home/users3/peterlin/bin:.:/home/users3/peterlin/.fzf/bin
+export PATH=$HOME/bin:/usr/local/bin:/usr/sbin:/sbin:/bin:/usr/bin:/usr/X11R6/bin:/home/users3/peterlin/bin:.:/home/users3/peterlin/.fzf/bin:$HOME/bash_zsh_switch
 
-
+# Goto workspace 
+export HOME2=/local2/peterlin
