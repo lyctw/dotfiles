@@ -3,6 +3,7 @@
 " ============ "
 syntax on
 set relativenumber
+set colorcolumn=
 set noerrorbells 
 set belloff=all
 set expandtab 
