@@ -3,6 +3,7 @@
 " ============ "
 syntax on
 set relativenumber
+set colorcolumn=
 set noerrorbells 
 set belloff=all
 set expandtab 
@@ -78,6 +79,7 @@ let NERDSpaceDelims = 1
 call plug#begin('~/.vim/plugged')
     " Color schema
     Plug 'ayu-theme/ayu-vim'
+    " Plug 'morhetz/gruvbox'
 
     Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
     Plug 'junegunn/fzf.vim'
@@ -87,7 +89,7 @@ call plug#begin('~/.vim/plugged')
     Plug 'preservim/nerdcommenter'
     Plug 'vim-airline/vim-airline'
     Plug 'vim-airline/vim-airline-themes'
-    " Plug 'ryanoasis/vim-devicons'
+    Plug 'ryanoasis/vim-devicons'
     Plug 'wakatime/vim-wakatime'
     Plug 'jiangmiao/auto-pairs'
     " Plug 'w0rp/ale' " Syntex checker
@@ -131,6 +133,10 @@ call plug#end()
 set termguicolors     " enable true colors support
 let ayucolor="dark"   " for dark version of theme
 colorscheme ayu
+" gruvbox theme
+" colorscheme gruvbox
+" set background=dark
+" autocmd VimEnter * hi Normal ctermbg=none " make it transparent
 
 " prettier
 "let g:prettier#config#print_width = 500
