@@ -74,6 +74,7 @@ let NERDSpaceDelims = 1
 " ============="
 " ===Plugins==="
 " ============="
+" `curl -fLo ~/.vim/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim`
 call plug#begin('~/.vim/plugged')
     " Color schema
     Plug 'ayu-theme/ayu-vim'
