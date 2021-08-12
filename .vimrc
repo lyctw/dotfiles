@@ -95,6 +95,7 @@ call plug#begin('~/.vim/plugged')
     " C/C++
     Plug 'octol/vim-cpp-enhanced-highlight'
     Plug 'justinmk/vim-syntax-extra' 
+    Plug 'vivien/vim-linux-coding-style'
 
     " TypeScript
     Plug 'leafgarland/typescript-vim'
@@ -184,6 +185,10 @@ let g:ale_c_gcc_options = '-Wall -O2 -std=99'
 "let g:ale_cpp_gcc_options '-Wall -O2 -std=c++17'
 let g:ale_c_cppcheck_options = ''
 let g:ale_cpp_cppcheck_options = ''
+
+" Linux Coding Style
+let g:linuxsty_patterns = [ "/usr/src/", "/linux" ]
+
 
 " You Complete Me
 let g:ycm_server_python_interpreter='/usr/bin/python'
