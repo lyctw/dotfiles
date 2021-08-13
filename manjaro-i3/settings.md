@@ -96,4 +96,8 @@ ibus-daemon -drx
 
 Then logout or reboot to take effect.
 
+## Emojo
 
+```
+sudo pacman -S noto-fonts-emoji
+```
