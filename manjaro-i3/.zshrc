@@ -116,7 +116,7 @@ alias grep='grep --color=auto'
 alias mkdir='mkdir -pv'
 alias mv='mv -v'
 alias wget='wget -c'
-alias tmux='tmux -u'
+alias tmux='tmux -2 -u'
 alias rgr='ranger'
 
 # Use programs without a root-equivalent group
