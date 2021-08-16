@@ -3,6 +3,7 @@
 " ============ "
 syntax on
 set relativenumber
+set colorcolumn=
 set noerrorbells 
 set belloff=all
 set expandtab 
@@ -17,6 +18,7 @@ set laststatus=2
 set tags=./tags,./TAGS,tags;~,TAGS;~ " for ctags [Note] run `ctags -R .` to generate tags file
 set cursorline
 set formatoptions-=cro " disable auto comment [BUG] this line doesn't work
+set encoding=utf-8
 
 " File-types
 autocmd BufNewFile,BufRead *.go set filetype=go
@@ -73,13 +75,16 @@ let NERDSpaceDelims = 1
 " ============="
 " ===Plugins==="
 " ============="
+" `curl -fLo ~/.vim/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim`
 call plug#begin('~/.vim/plugged')
     " Color schema
     Plug 'ayu-theme/ayu-vim'
+    " Plug 'morhetz/gruvbox'
 
     Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
     Plug 'junegunn/fzf.vim'
     Plug 'ggreer/the_silver_searcher'
+    Plug 'preservim/nerdtree'
     Plug 'tpope/vim-fugitive'
     Plug 'preservim/nerdcommenter'
     Plug 'vim-airline/vim-airline'
@@ -89,16 +94,10 @@ call plug#begin('~/.vim/plugged')
     Plug 'jiangmiao/auto-pairs'
     " Plug 'w0rp/ale' " Syntex checker
 
-    " For tracing Kernel code
-    Plug 'preservim/nerdtree' 
-    Plug 'vim-scripts/taglist.vim'
-    Plug 'wesleyche/SrcExpl' " Show function declarations of file
-    Plug 'wesleyche/Trinity'
-    
-
     " C/C++
     Plug 'octol/vim-cpp-enhanced-highlight'
     Plug 'justinmk/vim-syntax-extra' 
+    Plug 'vivien/vim-linux-coding-style'
 
     " TypeScript
     Plug 'leafgarland/typescript-vim'
@@ -123,7 +122,7 @@ call plug#begin('~/.vim/plugged')
       \ 'for': ['javascript', 'typescript'] }
 
     " Auto Complete
-    Plug 'Valloric/YouCompleteMe'
+    " Plug 'Valloric/YouCompleteMe'
     
 call plug#end()
 
@@ -135,7 +134,10 @@ call plug#end()
 set termguicolors     " enable true colors support
 let ayucolor="dark"   " for dark version of theme
 colorscheme ayu
-autocmd VimEnter * hi Normal ctermbg=none " make it transparent
+" gruvbox theme
+" colorscheme gruvbox
+" set background=dark
+" autocmd VimEnter * hi Normal ctermbg=none " make it transparent
 
 " prettier
 "let g:prettier#config#print_width = 500
@@ -189,6 +191,9 @@ let g:ale_c_gcc_options = '-Wall -O2 -std=99'
 "let g:ale_cpp_gcc_options '-Wall -O2 -std=c++17'
 let g:ale_c_cppcheck_options = ''
 let g:ale_cpp_cppcheck_options = ''
+
+" Linux Coding Style
+let g:linuxsty_patterns = [ "/usr/src/", "/linux" ]
 
 " You Complete Me
 let g:ycm_server_python_interpreter='/usr/bin/python'
@@ -251,28 +256,6 @@ nmap ze :cs find e <C-R>=expand("<cword>")<CR><CR>
 nmap zf :cs find f <C-R>=expand("<cfile>")<CR><CR>
 nmap zi :cs find i ^<C-R>=expand("<cfile>")<CR>$<CR>
 nmap zd :cs find d <C-R>=expand("<cword>")<CR><CR>
-
-" TagList
-nmap <F8> :TlistToggle<CR><CR>
-let Tlist_Show_One_File=1
-let Tlist_Exit_OnlyWindow=1
-set ut=100
-
-" NERDTree
-nmap <F9> :NERDTreeFind<CR><CR>
-let NERDTreeWinPos=1
-
-" SrcExpl
-nmap <F10> :SrcExplToggle<CR>
-let g:SrcExpl_pluginList = [
-        \ "__Tag_List__",
-        \ "_NERD_tree_"
-        \ ]
-
-" Trinity
-nmap <F7> :TrinityToggleAll<CR>
-
-
 
 " Try to prevent bad habits like using the arrow keys for movement. This is
 " not the only possible bad habit. For example, holding down the h/j/k/l keys

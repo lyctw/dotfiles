@@ -75,7 +75,7 @@ ZSH_THEME="powerlevel10k/powerlevel10k"
 # Custom plugins may be added to $ZSH_CUSTOM/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git colored-man-pages zsh-autosuggestions git-open tmux)
+plugins=(git colored-man-pages zsh-autosuggestions tmux)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -112,6 +112,7 @@ alias grep='grep --color=auto'
 alias mkdir='mkdir -pv'
 alias mv='mv -v'
 alias wget='wget -c'
+alias tmux='tmux -u' # UTF-8 support
 
 # Use programs without a root-equivalent group
 alias docker='sudo docker'
