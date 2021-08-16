@@ -1,6 +1,8 @@
 [user]
   name = lyctw
   email = lyctw.ee@gmail.com
+[core]
+  editor = vim
 [color]
   ui = auto
 [alias]
