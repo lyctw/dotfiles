@@ -23,6 +23,8 @@ URxvt*shading:                  35
 
 Edit `vim ~/.config/mimeapps.list`
 
+Find desktop file (e.g. zathura): `pacman -Ql zathura-pdf-poppler | grep .desktop`
+
 
 ## System font and font size
 
