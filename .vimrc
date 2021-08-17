@@ -120,7 +120,7 @@ call plug#begin('~/.vim/plugged')
       \ 'for': ['javascript', 'typescript'] }
 
     " Auto Complete
-    Plug 'Valloric/YoCompleteMe'
+    " Plug 'Valloric/YoCompleteMe'
     
 call plug#end()
 
