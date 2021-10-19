@@ -1,34 +1,90 @@
-cd /local/peterlin
 export TERMINFO=/usr/share/terminfo
 export TERM=xterm-color
 
-# Make zsh as default shell without root permission
-export SHELL=/bin/zsh
-exec /bin/zsh -l
+export EDITOR=vim
 
-## Get into zsh, commands below won't work.
-
-# export http_proxy=http://10.0.1.18:3128/
-# export https_proxy=http://10.0.1.18:3128/
-# export ftp_proxy=http://10.0.1.18:3128/
-# export ftp_proxy=http://10.0.1.18:3128/
-
-# parse_git_branch() {
-     # git branch 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/(\1)/'
-# }
-
-# export PS1="\[\e[1;36m\]\u@\h \[\e[32m\]\W \[\e[91m\]\$(parse_git_branch)\[\e[00m\]$ "
-
-# PATH=$PATH:/usr/sbin:/sbin
-
-# # command-line fuzzy finder
-# [ -f ~/.fzf.bash ] && source ~/.fzf.bash
-# export FZF_DEFAULT_OPTS="--ansi --preview-window 'right:60%' --preview 'bat --color=always --style=header,grid --line-range :300 {}'"
+export http_proxy=http://10.0.1.18:3128/
+export https_proxy=http://10.0.1.18:3128/
+export ftp_proxy=http://10.0.1.18:3128/
+export ftp_proxy=http://10.0.1.18:3128/
 
 
-# alias wget="https_proxy='https://cache1:3128' wget -c"
+#### 
 
-# function cd () {
-  # builtin cd "$1"
-  # ls -ACF
-# }
+if [ $(hostname) != "atcfdc88" ] && [ $(hostname) != "atcsi01" ]; then
+  # Fixed git pull issue
+  return 0
+fi
+
+
+if [ $(hostname) = "atcsi01" ]; then
+  #### [ Blese START ] ####
+  [[ $- == *i* ]] && source /local3/blesh/ble.sh --noattach
+  #### [ PATH ] ####
+  export PATH=/local3/bin:/home/project/eda/bin:/home/project/utils/bin:/bin:/usr/bin:/usr/X11R6/bin:/home/users3/peterlin/bin
+  #### [ Prompt 1 ] ####
+  # function my_bash_prompt {
+      # local __user_and_host="\[\033[01;32m\][\u@\h"
+      # local __cur_location="\[\033[01;34m\]\W\[\033[01;32m\]]"
+      # local __git_branch_color="\[\033[31m\]"
+      # #local __git_branch="\`ruby -e \"print (%x{git branch 2> /dev/null}.grep(/^\*/).first || '').gsub(/^\* (.+)$/, '(\1) ')\"\`"
+      # local __git_branch='`git branch 2> /dev/null | grep -e ^* | sed -E  s/^\\\\\*\ \(.+\)$/\(\\\\\1\)\ /`'
+      # local __prompt_tail="\[\033[35m\]$"
+      # local __last_color="\[\033[00m\]"
+      # export PS1="$__user_and_host $__cur_location $__git_branch_color$__git_branch$__prompt_tail$__last_color "
+  # }
+  # my_bash_prompt
+  #### [ Prompt 2 ] ####
+  linecolour='\[\e[0;37m\]'
+  datecolour='\[\e[1;36m\]'
+  if [[ $UID == 0  ]]; then
+    usercolour='\[\e[1;31m\]';
+  else
+    usercolour='\[\e[1;32m\]';
+  fi
+  hostcolour='\[\e[1;33m\]'
+  atcolour='\[\e[1;0m\]'
+  dircolour='\[\e[1;34m\]'
+  reset='\[\e[0m\]'
+  dateformat='%R'
+  gitcolour='\e[0;32m'
+
+  function gitPrompt() {
+    if [[ -d ".git" ]]; then
+        echo -e "-[${gitcolour}$(git branch | grep "*" | sed "s/* //")\e[0m]"
+    fi
+  }
+
+  PS1="${linecolour}┌─[${usercolour}\u${atcolour}@${hostcolour}\h${linecolour}]-[${datecolour}\$(date \"+${dateformat}\")${linecolour}]-[${dircolour}\${PWD/#\$HOME/~}${linecolour}]\$(gitPrompt)\n${linecolour}└─>${reset} "
+  #### [ Aliases ] ####
+  function pushd () {
+      command pushd "$@" > /dev/null
+  }
+  function popd () {
+      command popd "$@" > /dev/null
+  }
+  function cd () {
+      # builtin cd "$1"
+      command pushd "$1" > /dev/null
+      ls -ACF
+  }
+  alias cdws='cd /si1s/peterlin'
+  alias tmux='/bin/tmux -u -2'
+  alias vimfzf='vim $(fzf)'
+  #### [ fzf history ] ####
+  [ -f ~/.fzf.bash ] && source ~/.fzf.bash
+  #### [ blesh END ] ####
+  [[ ${BLE_VERSION-} ]] && ble-attach
+  return 0
+fi
+
+
+function launch_zsh () {
+  cd /local3/peterlin
+  export SHELL=/bin/zsh
+  exec /bin/zsh -l
+}
+
+if [ $(hostname) = "atcfdc88" ]; then
+  launch_zsh
+fi
