@@ -28,7 +28,7 @@ function proxy_on() {
                https_proxy=$proxy \
                ftp_proxy=$proxy \
                rsync_proxy=$proxy
-        echo "Proxy environment variable set."
+        # echo "Proxy environment variable set."
         return 0
     fi
 
@@ -67,8 +67,8 @@ export ZSH="/home/peterlin/.oh-my-zsh"
 # load a random theme each time oh-my-zsh is loaded, in which case,
 # to know which specific one was loaded, run: echo $RANDOM_THEME
 # See https://github.com/ohmyzsh/ohmyzsh/wiki/Themes
-ZSH_THEME="robbyrussell"
-# ZSH_THEME="powerlevel10k/powerlevel10k"
+# ZSH_THEME="robbyrussell"
+ZSH_THEME="powerlevel10k/powerlevel10k"
 
 # Set list of themes to pick from when loading at random
 # Setting this variable when ZSH_THEME=random will cause zsh to load
