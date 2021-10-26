@@ -18,6 +18,7 @@ set tags=./tags,./TAGS,tags;~,TAGS;~ " for ctags [Note] run `ctags -R .` to gene
 set cursorline
 set formatoptions-=cro " disable auto comment [BUG] this line doesn't work
 set encoding=utf-8
+set splitright
 
 " File-types
 autocmd BufNewFile,BufRead *.go set filetype=go
