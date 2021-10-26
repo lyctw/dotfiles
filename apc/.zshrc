@@ -8,6 +8,7 @@ fi
 # If you come from bash you might have to change your $PATH.
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
 
+export EDITOR=vim
 export GIT_SSH="/home/peterlin/Github_repos/dotfiles/apc/proxy_jump.sh"
 # export http_proxy=http://10.0.1.18:3128/
 # export https_proxy=http://10.0.1.18:3128/
@@ -166,6 +167,8 @@ alias grep='grep --color=auto'
 alias mkdir='mkdir -pv'
 alias mv='mv -v'
 alias wget='wget -c'
+alias tmux='tmux -2 -u'
+alias rgr='ranger'
 
 # Use programs without a root-equivalent group
 alias docker='sudo docker'
