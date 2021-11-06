@@ -6,7 +6,7 @@
 * `git pull`
 * `git clone`
 
-> You can add alias in your `.bashrc` or `.zshrc`
+> Add `export GIT_SSH='$PWD/proxy_jump.sh'` in your `.bashrc` or `.zshrc`
 
 2. In `.git/config`:
 

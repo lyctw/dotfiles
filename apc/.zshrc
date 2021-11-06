@@ -8,6 +8,7 @@ fi
 # If you come from bash you might have to change your $PATH.
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
 
+export EDITOR=vim
 export GIT_SSH="/home/peterlin/Github_repos/dotfiles/apc/proxy_jump.sh"
 # export http_proxy=http://10.0.1.18:3128/
 # export https_proxy=http://10.0.1.18:3128/
@@ -27,7 +28,7 @@ function proxy_on() {
                https_proxy=$proxy \
                ftp_proxy=$proxy \
                rsync_proxy=$proxy
-        echo "Proxy environment variable set."
+        # echo "Proxy environment variable set."
         return 0
     fi
 
@@ -66,8 +67,8 @@ export ZSH="/home/peterlin/.oh-my-zsh"
 # load a random theme each time oh-my-zsh is loaded, in which case,
 # to know which specific one was loaded, run: echo $RANDOM_THEME
 # See https://github.com/ohmyzsh/ohmyzsh/wiki/Themes
-ZSH_THEME="robbyrussell"
-# ZSH_THEME="powerlevel10k/powerlevel10k"
+# ZSH_THEME="robbyrussell"
+ZSH_THEME="powerlevel10k/powerlevel10k"
 
 # Set list of themes to pick from when loading at random
 # Setting this variable when ZSH_THEME=random will cause zsh to load
@@ -166,6 +167,8 @@ alias grep='grep --color=auto'
 alias mkdir='mkdir -pv'
 alias mv='mv -v'
 alias wget='wget -c'
+alias tmux='tmux -2 -u'
+alias rgr='ranger'
 
 # Use programs without a root-equivalent group
 alias docker='sudo docker'
