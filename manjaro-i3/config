@@ -62,8 +62,8 @@ bindsym $mod+Ctrl+m exec pavucontrol
 
 # Start Applications
 bindsym $mod+Ctrl+b exec terminal -e 'bmenu'
-bindsym $mod+F2 exec brave
-bindsym $mod+F3 exec nautilus
+# bindsym $mod+F2 exec brave
+# bindsym $mod+F3 exec nautilus
 # bindsym $mod+F3 exec ranger
 bindsym $mod+Shift+F3 exec pcmanfm_pkexec
 bindsym $mod+F5 exec terminal -e 'mocp'
@@ -344,7 +344,7 @@ bar {
 	position bottom
 
 ## please set your primary output first. Example: 'xrandr --output eDP1 --primary'
-#	tray_output primary
+  # tray_output primary
   tray_output HDMI-A-0
 
 	bindsym button4 nop

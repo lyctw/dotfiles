@@ -119,6 +119,14 @@ alias wget='wget -c'
 alias tmux='tmux -2 -u'
 alias rgr='ranger'
 
+function pushd () {
+    builtin pushd "$@" > /dev/null
+}
+
+function popd () {
+    builtin popd "$@" > /dev/null
+}
+
 # Use programs without a root-equivalent group
 alias docker='sudo docker'
 # alias npm='sudo npm'
