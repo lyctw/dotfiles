@@ -21,7 +21,7 @@ URxvt*shading:                  35
 
 ## Change default browser from Pale Moon to Brave
 
-Edit `vim ~/.config/mimeapps.list`
+Edit `vim ~/.config/mimeapps.list` and `vim ~/.profile`
 
 Find desktop file (e.g. zathura): `pacman -Ql zathura-pdf-poppler | grep .desktop`
 
