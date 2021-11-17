@@ -1,8 +1,6 @@
 export TERMINFO=/usr/share/terminfo
 export TERM=xterm-color
-
 export EDITOR=vim
-
 export http_proxy=http://10.0.1.18:3128/
 export https_proxy=http://10.0.1.18:3128/
 export ftp_proxy=http://10.0.1.18:3128/
@@ -18,10 +16,11 @@ fi
 
 
 if [ $(hostname) = "atcsi01" ]; then
-  #### [ Blese START ] ####
-  [[ $- == *i* ]] && source /local3/blesh/ble.sh --noattach
+  #### [ Blesh ] ####
+  source /local3/Github_repos/ble.sh/out/ble.sh
   #### [ PATH ] ####
-  export PATH=/local3/bin:/home/project/eda/bin:/home/project/utils/bin:/bin:/usr/bin:/usr/X11R6/bin:/home/users3/peterlin/bin
+  # export PATH=/home/project/eda/bin:/home/project/utils/bin:/bin:/usr/bin:/usr/X11R6/bin:/home/users3/peterlin/bin
+  export PATH=/local3/bin:/bin:/usr/bin:/usr/X11R6/bin:/home/users3/peterlin/bin
   #### [ Prompt 1 ] ####
   # function my_bash_prompt {
       # local __user_and_host="\[\033[01;32m\][\u@\h"
@@ -70,11 +69,8 @@ if [ $(hostname) = "atcsi01" ]; then
   }
   alias cdws='cd /si1s/peterlin'
   alias tmux='/bin/tmux -u -2'
-  alias vimfzf='vim $(fzf)'
   #### [ fzf history ] ####
   [ -f ~/.fzf.bash ] && source ~/.fzf.bash
-  #### [ blesh END ] ####
-  [[ ${BLE_VERSION-} ]] && ble-attach
   return 0
 fi
 
