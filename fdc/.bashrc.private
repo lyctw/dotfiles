@@ -20,7 +20,7 @@ if [ $(hostname) = "atcsi01" ]; then
   source /local3/Github_repos/ble.sh/out/ble.sh
   #### [ PATH ] ####
   # export PATH=/home/project/eda/bin:/home/project/utils/bin:/bin:/usr/bin:/usr/X11R6/bin:/home/users3/peterlin/bin
-  export PATH=/local3/bin:/bin:/usr/bin:/usr/X11R6/bin:/home/users3/peterlin/bin
+  export PATH=/home/users3/peterlin/.local/bin:/local3/bin:/bin:/usr/bin:/usr/X11R6/bin:/home/users3/peterlin/bin
   #### [ Prompt 1 ] ####
   # function my_bash_prompt {
       # local __user_and_host="\[\033[01;32m\][\u@\h"
