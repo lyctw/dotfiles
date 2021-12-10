@@ -3,7 +3,6 @@
 " ============ "
 syntax on
 set relativenumber
-set colorcolumn=
 set noerrorbells 
 set belloff=all
 set expandtab 
@@ -19,9 +18,13 @@ set tags=./tags,./TAGS,tags;~,TAGS;~ " for ctags [Note] run `ctags -R .` to gene
 set cursorline
 set formatoptions-=cro " disable auto comment [BUG] this line doesn't work
 set encoding=utf-8
+set splitright
+set listchars=tab:\|\
+set list
 
 " File-types
 autocmd BufNewFile,BufRead *.go set filetype=go
+autocmd BufNewFile,BufRead *.ldS set syntax=ld
 
 " Tabs
 set sw=2 ts=2 sts=2 " Default
@@ -79,7 +82,6 @@ let NERDSpaceDelims = 1
 call plug#begin('~/.vim/plugged')
     " Color schema
     Plug 'ayu-theme/ayu-vim'
-    " Plug 'morhetz/gruvbox'
 
     Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
     Plug 'junegunn/fzf.vim'
@@ -93,6 +95,9 @@ call plug#begin('~/.vim/plugged')
     Plug 'wakatime/vim-wakatime'
     Plug 'jiangmiao/auto-pairs'
     " Plug 'w0rp/ale' " Syntex checker
+
+    " BitBake
+    Plug 'kergoth/vim-bitbake'
 
     " C/C++
     Plug 'octol/vim-cpp-enhanced-highlight'
@@ -121,9 +126,6 @@ call plug#begin('~/.vim/plugged')
       \ 'do': 'yarn install',
       \ 'for': ['javascript', 'typescript'] }
 
-    " Auto Complete
-    " Plug 'Valloric/YouCompleteMe'
-    
 call plug#end()
 
 " ============="
@@ -134,10 +136,6 @@ call plug#end()
 set termguicolors     " enable true colors support
 let ayucolor="dark"   " for dark version of theme
 colorscheme ayu
-" gruvbox theme
-" colorscheme gruvbox
-" set background=dark
-" autocmd VimEnter * hi Normal ctermbg=none " make it transparent
 
 " prettier
 "let g:prettier#config#print_width = 500
@@ -194,10 +192,6 @@ let g:ale_cpp_cppcheck_options = ''
 
 " Linux Coding Style
 let g:linuxsty_patterns = [ "/usr/src/", "/linux" ]
-
-" You Complete Me
-let g:ycm_server_python_interpreter='/usr/bin/python'
-let g:ycm_global_ycm_extra_conf='~/.vim/.ycm_extra_conf.py'
 
 " ============="
 " ==CustomCmds="

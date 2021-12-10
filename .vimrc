@@ -19,6 +19,8 @@ set cursorline
 set formatoptions-=cro " disable auto comment [BUG] this line doesn't work
 set encoding=utf-8
 set splitright
+set listchars=tab:\|\
+set list
 
 " File-types
 autocmd BufNewFile,BufRead *.go set filetype=go
@@ -92,6 +94,9 @@ call plug#begin('~/.vim/plugged')
     Plug 'wakatime/vim-wakatime'
     " Plug 'jiangmiao/auto-pairs'
     " Plug 'w0rp/ale' " Syntex checker
+
+    " BitBake
+    Plug 'kergoth/vim-bitbake' 
 
     " C/C++
     Plug 'octol/vim-cpp-enhanced-highlight'
