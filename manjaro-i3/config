@@ -49,10 +49,10 @@ bindsym $mod+z exec --no-startup-id morc_menu
 ################################################################################################
 
 exec --no-startup-id volumeicon
-# bindsym $mod+Ctrl+m exec terminal -e 'alsamixer'
+bindsym $mod+Ctrl+m exec terminal -e 'alsamixer --card=1'
 # exec --no-startup-id pulseaudio
 # exec --no-startup-id pa-applet
-bindsym $mod+Ctrl+m exec pavucontrol
+# bindsym $mod+Ctrl+m exec pavucontrol
 
 ################################################################################################
 
@@ -344,8 +344,8 @@ bar {
 	position bottom
 
 ## please set your primary output first. Example: 'xrandr --output eDP1 --primary'
-  # tray_output primary
-  tray_output HDMI-A-0
+  tray_output primary
+  # tray_output HDMI-A-0
 
 	bindsym button4 nop
 	bindsym button5 nop
