@@ -19,6 +19,8 @@ set cursorline
 set formatoptions-=cro " disable auto comment [BUG] this line doesn't work
 set encoding=utf-8
 set splitright
+set listchars=tab:\|\
+set list
 
 " File-types
 autocmd BufNewFile,BufRead *.go set filetype=go
@@ -90,8 +92,11 @@ call plug#begin('~/.vim/plugged')
     Plug 'vim-airline/vim-airline-themes'
     Plug 'ryanoasis/vim-devicons'
     Plug 'wakatime/vim-wakatime'
-    Plug 'jiangmiao/auto-pairs'
+    " Plug 'jiangmiao/auto-pairs'
     " Plug 'w0rp/ale' " Syntex checker
+
+    " BitBake
+    Plug 'kergoth/vim-bitbake' 
 
     " C/C++
     Plug 'octol/vim-cpp-enhanced-highlight'
@@ -120,9 +125,6 @@ call plug#begin('~/.vim/plugged')
       \ 'do': 'yarn install',
       \ 'for': ['javascript', 'typescript'] }
 
-    " Auto Complete
-    " Plug 'Valloric/YoCompleteMe'
-    
 call plug#end()
 
 " ============="
@@ -189,11 +191,6 @@ let g:ale_cpp_cppcheck_options = ''
 
 " Linux Coding Style
 let g:linuxsty_patterns = [ "/usr/src/", "/linux" ]
-
-
-" You Complete Me
-let g:ycm_server_python_interpreter='/usr/bin/python'
-let g:ycm_global_ycm_extra_conf='~/.vim/.ycm_extra_conf.py'
 
 " ============="
 " ==CustomCmds="
