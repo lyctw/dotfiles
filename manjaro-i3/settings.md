@@ -1,5 +1,6 @@
-
-`.i3/config` or `.config/i3/config` ??????????
+* i3 config file: `.i3/config`
+* Commonly used packages
+  * `sudo pacman -S zathura ranger flameshot newsboat tldr gdb-multiarch lsof`
 
 ## ~~urxvt Terminal~~
 
