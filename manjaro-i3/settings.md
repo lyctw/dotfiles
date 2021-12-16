@@ -1,6 +1,11 @@
 * i3 config file: `.i3/config`
 * Commonly used packages
-  * `sudo pacman -S zathura ranger flameshot newsboat tldr gdb-multiarch lsof`
+  ```
+  sudo pacman -S zathura ranger flameshot \
+                 newsboat tldr gdb-multiarch lsof \
+                 ttf-ubuntu-font-family \
+                 ttf-fira-code
+  ```
 
 ## ~~urxvt Terminal~~
 
