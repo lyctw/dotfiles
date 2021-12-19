@@ -24,6 +24,8 @@ set list
 
 " File-types
 autocmd BufNewFile,BufRead *.go set filetype=go
+autocmd BufNewFile,BufRead *.s,*.S set filetype=asm
+autocmd BufNewFile,BufRead *.ldS set syntax=ld
 
 " Tabs
 set sw=2 ts=2 sts=2 " Default
