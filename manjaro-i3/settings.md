@@ -4,8 +4,12 @@
   sudo pacman -S zathura ranger flameshot \
                  newsboat tldr gdb-multiarch lsof \
                  ttf-ubuntu-font-family \
-                 ttf-fira-code
+                 ttf-fira-code \
+                 docker \
+                 pavucontrol \
+                 cscope ctags
   ```
+* pdflatex for building riscv-isa-manual: `sudo pacman -S make texlive-most texlive-bin`
 
 ## ~~urxvt Terminal~~
 
