@@ -110,8 +110,9 @@ source $ZSH/oh-my-zsh.sh
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
 alias cp='cp -Rv'
-alias ls='ls --color=auto -ACF'
-alias ll='ls --color=auto -alF'
+# alias ls='ls --color=auto -ACF'
+# alias ll='ls --color=auto -alF'
+alias ls='exa'
 alias grep='grep --color=auto'
 alias mkdir='mkdir -pv'
 alias mv='mv -v'
@@ -134,7 +135,7 @@ alias docker='sudo docker'
 # Show contents of dir after action
 function cd () {
     builtin cd "$1"
-    ls -ACF
+    ls
 }
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
