@@ -1,9 +1,14 @@
 # Task Groups
 https://lists.riscv.org/g/tech-unixplatformspec/rss
 https://lists.riscv.org/g/tech-psabi/rss
+https://lists.riscv.org/g/tech-virt-mem/rss
+https://lists.riscv.org/g/tech-privileged/rss
+https://lists.riscv.org/g/tech-tee/rss
+https://lists.riscv.org/g/tech-bitmanip/rss
+https://lists.riscv.org/g/tech-vector-ext/rss
+https://lists.riscv.org/g/tech-cmo/rss
 # newsboat rss urls
 https://lwn.net/headlines/newrss
-https://lists.riscv.org/g/tech-unixplatformspec/rss
 https://news.ycombinator.com/rss 
 https://qiita.com/tomoyuki-nakabayashi/feed
 http://osblog.stephenmarz.com/feed.rss
