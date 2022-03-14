@@ -31,6 +31,7 @@
                 * install `ctags` 
                 * `ctags -R .` to generate tags
                 * Usage: `<C+]>` `<C+t>`
+         5. `cloc`, count, and compute differences of, lines of source code and comments.
     * 自訂終端機
         * 安裝zsh
           https://www.youtube.com/watch?v=4KBuPCeF9Gc
