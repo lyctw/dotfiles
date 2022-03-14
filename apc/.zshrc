@@ -7,7 +7,9 @@ fi
 
 # If you come from bash you might have to change your $PATH.
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
+export PATH=/home/peterlin/.cargo/bin:$PATH
 
+export GPG_TTY=$(tty)
 export EDITOR=vim
 export GIT_SSH="/home/peterlin/Github_repos/dotfiles/apc/proxy_jump.sh"
 # export http_proxy=http://10.0.1.18:3128/
@@ -161,7 +163,8 @@ source $ZSH/oh-my-zsh.sh
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
 alias cp='cp -Rv'
-alias ls='ls --color=auto -ACF'
+# alias ls='ls --color=auto -ACF'
+alias ls='exa'
 alias ll='ls --color=auto -alF'
 alias grep='grep --color=auto'
 alias mkdir='mkdir -pv'
@@ -177,7 +180,7 @@ alias docker='sudo docker'
 # Show contents of dir after action
 function cd () {
     builtin cd "$1"
-    ls -ACF
+    ls #-ACF
 }
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
