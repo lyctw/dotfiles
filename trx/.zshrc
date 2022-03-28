@@ -11,7 +11,7 @@ export PATH=/home/users3/peterlin/.cargo/bin:$PATH
 
 export GPG_TTY=$(tty)
 export EDITOR=vim
-export GIT_SSH="/home/peterlin/Github_repos/dotfiles/apc/proxy_jump.sh"
+export GIT_SSH="/home/users3/peterlin/Github_repos/dotfiles/apc/proxy_jump.sh"
 # export http_proxy=http://10.0.1.18:3128/
 # export https_proxy=http://10.0.1.18:3128/
 # export ftp_proxy=http://10.0.1.18:3128/
