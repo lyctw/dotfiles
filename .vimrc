@@ -5,7 +5,7 @@ syntax on
 set relativenumber
 set noerrorbells 
 set belloff=all
-set expandtab 
+" set expandtab
 set nu
 set nowrap
 set smartcase
