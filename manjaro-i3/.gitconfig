@@ -3,6 +3,7 @@
   email = lyctw.ee@gmail.com
 [core]
   editor = vim
+	excludesFile = ~/.gitignore
 [color]
   ui = auto
 [alias]
