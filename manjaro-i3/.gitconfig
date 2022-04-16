@@ -13,7 +13,7 @@
   st = status
   br = branch
   ls = ls-files
-  tlog = log --graph --all --format='%C(red)%h %C(white)%s %Cgreen(%cr)%C(cyan) <%an>%Creset%C(yellow)%d%C reset'
+  tlog = log --graph --all --format='%C(red)%h %C(white)%s %Cgreen(%cr)%C(cyan) <%an>%Creset%C(yellow)%d%Creset'
   tkdiff = difftool --tool=tkdiff --no-prompt
   ff = merge --ff-only
   plrb = pull --rebase
