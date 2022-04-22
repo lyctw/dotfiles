@@ -7,7 +7,7 @@ fi
 
 # If you come from bash you might have to change your $PATH.
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
-export PATH=/home/users3/peterlin/.cargo/bin:$PATH
+export PATH=/home/users3/peterlin/.cargo/bin:$PATH:/home/users3/peterlin/local3/bin
 
 export GPG_TTY=$(tty)
 export EDITOR=vim
@@ -191,3 +191,6 @@ function cd () {
 
 # Fast Syntax Highlighting (F-Sy-H)
 source ~/.oh-my-zsh/custom/plugins/fast-syntax-highlighting/fast-syntax-highlighting.plugin.zsh
+
+# To customize prompt, run `p10k configure` or edit /local/home/users3/peterlin/.p10k.zsh.
+[[ ! -f /local/home/users3/peterlin/.p10k.zsh ]] || source /local/home/users3/peterlin/.p10k.zsh
