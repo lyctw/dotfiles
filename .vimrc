@@ -5,7 +5,6 @@ syntax on
 set relativenumber
 set noerrorbells 
 set belloff=all
-set expandtab 
 set nu
 set nowrap
 set smartcase
@@ -251,6 +250,13 @@ nmap ze :cs find e <C-R>=expand("<cword>")<CR><CR>
 nmap zf :cs find f <C-R>=expand("<cfile>")<CR><CR>
 nmap zi :cs find i ^<C-R>=expand("<cfile>")<CR>$<CR>
 nmap zd :cs find d <C-R>=expand("<cword>")<CR><CR>
+
+" Uncomment the following to have Vim jump to the last position when
+" reopening a file
+if has("autocmd")
+  au BufReadPost * if line("'\"") > 0 && line("'\"") <= line("$")
+    \| exe "normal! g'\"" | endif
+endif
 
 " Try to prevent bad habits like using the arrow keys for movement. This is
 " not the only possible bad habit. For example, holding down the h/j/k/l keys
