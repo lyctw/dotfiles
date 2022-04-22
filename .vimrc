@@ -21,6 +21,7 @@ set encoding=utf-8
 set splitright
 set listchars=tab:\|\
 set list
+set hlsearch
 
 " File-types
 autocmd BufNewFile,BufRead *.go set filetype=go
