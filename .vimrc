@@ -5,6 +5,7 @@ syntax on
 set relativenumber
 set noerrorbells 
 set belloff=all
+" set expandtab
 set nu
 set nowrap
 set smartcase
@@ -97,7 +98,7 @@ call plug#begin('~/.vim/plugged')
     " Plug 'w0rp/ale' " Syntex checker
 
     " BitBake
-    Plug 'kergoth/vim-bitbake' 
+    Plug 'kergoth/vim-bitbake'
 
     " C/C++
     Plug 'octol/vim-cpp-enhanced-highlight'

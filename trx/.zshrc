@@ -7,16 +7,70 @@ fi
 
 # If you come from bash you might have to change your $PATH.
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
+export PATH=/home/users3/peterlin/.cargo/bin:$PATH
+
+export GPG_TTY=$(tty)
+export EDITOR=vim
+export GIT_SSH="/home/users3/peterlin/Github_repos/dotfiles/apc/proxy_jump.sh"
+# export http_proxy=http://10.0.1.18:3128/
+# export https_proxy=http://10.0.1.18:3128/
+# export ftp_proxy=http://10.0.1.18:3128/
+
+function proxy_on() {
+    export no_proxy="localhost,127.0.0.1,localaddress,.localdomain.com"
+
+    if (( $# > 0 )); then
+        valid=$(echo $@ | sed -n 's/\([0-9]\{1,3\}.\?\)\{4\}:\([0-9]\+\)/&/p')
+        if [[ $valid != $@ ]]; then
+            >&2 echo "Invalid address"
+            return 1
+        fi
+        local proxy=$1
+        export http_proxy="$proxy" \
+               https_proxy=$proxy \
+               ftp_proxy=$proxy \
+               rsync_proxy=$proxy
+        # echo "Proxy environment variable set."
+        return 0
+    fi
+
+    echo -n "username: "; read username
+    if [[ $username != "" ]]; then
+        echo -n "password: "
+        read -es password
+        local pre="$username:$password@"
+    fi
+
+    echo -n "server: "; read server
+    echo -n "port: "; read port
+    local proxy=$pre$server:$port
+    export http_proxy="$proxy" \
+           https_proxy=$proxy \
+           ftp_proxy=$proxy \
+           rsync_proxy=$proxy \
+           HTTP_PROXY=$proxy \
+           HTTPS_PROXY=$proxy \
+           FTP_PROXY=$proxy \
+           RSYNC_PROXY=$proxy
+}
+
+function proxy_off(){
+    unset http_proxy https_proxy ftp_proxy rsync_proxy \
+          HTTP_PROXY HTTPS_PROXY FTP_PROXY RSYNC_PROXY
+    echo -e "Proxy environment variable removed."
+}
+
+proxy_on http://10.0.1.18:3128
 
 # Path to your oh-my-zsh installation.
-export ZSH="/home/peterlin/.oh-my-zsh"
+export ZSH="/home/users3/peterlin/.oh-my-zsh"
 
 # Set name of the theme to load --- if set to "random", it will
 # load a random theme each time oh-my-zsh is loaded, in which case,
 # to know which specific one was loaded, run: echo $RANDOM_THEME
 # See https://github.com/ohmyzsh/ohmyzsh/wiki/Themes
+# ZSH_THEME="robbyrussell"
 ZSH_THEME="powerlevel10k/powerlevel10k"
-
 
 # Set list of themes to pick from when loading at random
 # Setting this variable when ZSH_THEME=random will cause zsh to load
@@ -78,8 +132,7 @@ ZSH_THEME="powerlevel10k/powerlevel10k"
 # Custom plugins may be added to $ZSH_CUSTOM/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git colored-man-pages zsh-autosuggestions fast-syntax-highlighting)
-
+plugins=(git colored-man-pages zsh-autosuggestions tmux)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -111,23 +164,14 @@ source $ZSH/oh-my-zsh.sh
 
 alias cp='cp -Rv'
 # alias ls='ls --color=auto -ACF'
-# alias ll='ls --color=auto -alF'
 alias ls='exa'
+alias ll='ls --color=auto -alF'
 alias grep='grep --color=auto'
 alias mkdir='mkdir -pv'
 alias mv='mv -v'
 alias wget='wget -c'
 alias tmux='tmux -2 -u'
 alias rgr='ranger'
-alias rg='rg -g "!cscope*" -g "!tags"'
-
-function pushd () {
-    builtin pushd "$@" > /dev/null
-}
-
-function popd () {
-    builtin popd "$@" > /dev/null
-}
 
 # Use programs without a root-equivalent group
 alias docker='sudo docker'
@@ -136,14 +180,14 @@ alias docker='sudo docker'
 # Show contents of dir after action
 function cd () {
     builtin cd "$1"
-    ls
+    ls #-ACF
 }
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 
+# command-line fuzzy finder
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
-export FZF_CTRL_T_OPTS="--ansi --preview-window 'right:60%' --preview 'bat --color=always --style=header,grid --line-range :300 {}'"
 
-# Add RVM to PATH for scripting. Make sure this is the last PATH variable change.
-export PATH="$PATH:$HOME/.rvm/bin"
+# Fast Syntax Highlighting (F-Sy-H)
+source ~/.oh-my-zsh/custom/plugins/fast-syntax-highlighting/fast-syntax-highlighting.plugin.zsh
