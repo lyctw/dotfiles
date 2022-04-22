@@ -119,6 +119,7 @@ alias mv='mv -v'
 alias wget='wget -c'
 alias tmux='tmux -2 -u'
 alias rgr='ranger'
+alias rg='rg -g "!cscope*" -g "!tags"'
 
 function pushd () {
     builtin pushd "$@" > /dev/null
