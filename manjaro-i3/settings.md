@@ -116,3 +116,21 @@ Then logout or reboot to take effect.
 ```
 sudo pacman -S noto-fonts-emoji
 ```
+
+## Obsidian extensions
+
+### Pandoc (via LaTeX) for exporting PDF
+
+Install [pandoc community plugin in obsidian](https://github.com/OliverBalfour/obsidian-pandoc) pandoc and Google Noto CJK fonts (Chinese font included) on your host.
+
+`yay -S pandoc extra/noto-fonts-cjk`
+
+Add this metadate at the beginning of markdown file.
+
+```
+---
+mainfont: Noto Sans Mono CJK TC
+---
+```
+
+Then use `<Ctrl+P>` and type `pandoc LaTeX` to export and preview PDF (obsiously some markdown syntax cannot be rendered, simply don't use it :P)
