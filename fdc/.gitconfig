@@ -35,3 +35,5 @@
   email = peterlin@andestech.com
 [color]
   ui = auto
+[core]
+	excludesFile = ~/.gitignore

@@ -21,6 +21,7 @@ set encoding=utf-8
 set splitright
 set listchars=tab:\|\
 set list
+set hlsearch
 
 " File-types
 autocmd BufNewFile,BufRead *.go set filetype=go
@@ -252,6 +253,13 @@ nmap zf :cs find f <C-R>=expand("<cfile>")<CR><CR>
 nmap zi :cs find i ^<C-R>=expand("<cfile>")<CR>$<CR>
 nmap zd :cs find d <C-R>=expand("<cword>")<CR><CR>
 
+" Uncomment the following to have Vim jump to the last position when
+" reopening a file
+if has("autocmd")
+  au BufReadPost * if line("'\"") > 0 && line("'\"") <= line("$")
+    \| exe "normal! g'\"" | endif
+endif
+
 " Try to prevent bad habits like using the arrow keys for movement. This is
 " not the only possible bad habit. For example, holding down the h/j/k/l keys
 " for movement, rather than using more efficient movement commands, is also a
@@ -267,3 +275,7 @@ nmap zd :cs find d <C-R>=expand("<cword>")<CR><CR>
 " inoremap <Right> <ESC>:echoe "Use l"<CR>
 " inoremap <Up>    <ESC>:echoe "Use k"<CR>
 " inoremap <Down>  <ESC>:echoe "Use j"<CR>
+
+" Clear highlighting on escape in normal mode
+nnoremap <esc> :noh<return><esc>
+nnoremap <esc>^[ <esc>^[
