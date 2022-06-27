@@ -9,7 +9,7 @@ fi
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
 export PATH=/home/peterlin/.cargo/bin:$PATH
 
-export GPG_TTY=$(tty)
+export GPG_TTY=$(tty) # For mutt
 export EDITOR=vim
 export GIT_SSH="/home/peterlin/Github_repos/dotfiles/apc/proxy_jump.sh"
 # export http_proxy=http://10.0.1.18:3128/
@@ -60,7 +60,8 @@ function proxy_off(){
     echo -e "Proxy environment variable removed."
 }
 
-proxy_on http://10.0.1.18:3128
+# proxy_on http://10.0.1.18:3128
+proxy_on http://10.0.1.19:3128
 
 # Path to your oh-my-zsh installation.
 export ZSH="/home/peterlin/.oh-my-zsh"
@@ -164,7 +165,8 @@ source $ZSH/oh-my-zsh.sh
 
 alias cp='cp -Rv'
 # alias ls='ls --color=auto -ACF'
-alias ls='exa'
+# alias ls='exa'
+alias ls='/bin/ls'
 alias ll='ls --color=auto -alF'
 alias grep='grep --color=auto'
 alias mkdir='mkdir -pv'
