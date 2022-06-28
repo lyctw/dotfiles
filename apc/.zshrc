@@ -165,8 +165,7 @@ source $ZSH/oh-my-zsh.sh
 
 alias cp='cp -Rv'
 # alias ls='ls --color=auto -ACF'
-# alias ls='exa'
-alias ls='/bin/ls'
+alias ls='exa'
 alias ll='ls --color=auto -alF'
 alias grep='grep --color=auto'
 alias mkdir='mkdir -pv'
