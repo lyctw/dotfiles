@@ -1,14 +1,15 @@
 * i3 config file: `.i3/config`
 * Commonly used packages
   ```
-  sudo pacman -S zathura ranger flameshot \
-                 newsboat tldr gdb-multiarch lsof \
-                 ttf-ubuntu-font-family \
-                 ttf-fira-code \
-                 docker \
-                 pavucontrol \
-                 cscope ctags \
-                 pdfgrep 
+  yay -S terminator base-devel \
+         ranger flameshot \
+         newsboat tldr gdb-multiarch lsof \
+         ttf-ubuntu-font-family \
+         ttf-fira-code \
+         docker \
+         pavucontrol \
+         cscope ctags \
+         zathura zathura-pdf-poppler pdfgrep
   ```
 * pdflatex for building riscv-isa-manual: `sudo pacman -S make texlive-most texlive-bin`
 * opencc: `sudo pacman -S opencc`
