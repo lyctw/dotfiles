@@ -24,7 +24,7 @@ There is also a [script](https://github.com/JJGO/dotfiles/blob/master/shell-setu
 1. Install oh my zsh
 
 ```
-sudo apt install zsh
+yay -S install zsh
 chsh -s $(which zsh)
 ```
 
