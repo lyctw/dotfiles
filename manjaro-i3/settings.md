@@ -9,7 +9,8 @@
          docker \
          pavucontrol \
          cscope ctags \
-         zathura zathura-pdf-poppler pdfgrep
+         zathura zathura-pdf-poppler pdfgrep \
+         gromit-mpx
   ```
 * pdflatex for building riscv-isa-manual: `sudo pacman -S make texlive-most texlive-bin`
 * opencc: `sudo pacman -S opencc`
