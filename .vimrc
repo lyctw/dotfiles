@@ -66,8 +66,13 @@ noremap<leader>v "+p<cr>
 " fzf.vim
 noremap <leader>p :Files<cr>
 noremap <leader>g :GFiles<cr>
+noremap <leader>gs :GFiles?<cr>
 noremap <leader>b :Buffers<cr>
-noremap <leader>f :Ag<cr>
+noremap <leader>f :Rg<cr>
+noremap <leader>c :Commits<cr>
+noremap <leader>bc :BCommits<cr>
+noremap <leader>t :Tags<cr>
+noremap <leader>bt :BTags<cr>
 
 " nerdtree
 noremap <leader>e :NERDTreeToggle<cr>
