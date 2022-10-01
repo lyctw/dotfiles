@@ -1,6 +1,6 @@
 [user]
-  name = lyctw
-  email = lyctw.ee@gmail.com
+  name = Peter Lin
+  email = peterlin.tw@protonmail.com
 [core]
   editor = vim
 	excludesFile = ~/.gitignore
