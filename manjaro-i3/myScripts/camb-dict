@@ -1,4 +1,0 @@
-#!/bin/bash
-set -x
-
-brave https://dictionary.cambridge.org/dictionary/english/$1
