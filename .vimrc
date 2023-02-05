@@ -133,6 +133,10 @@ call plug#begin('~/.vim/plugged')
       \ 'do': 'yarn install',
       \ 'for': ['javascript', 'typescript'] }
 
+    " tabnine
+    Plug 'jayli/vim-easycomplete'
+    Plug 'SirVer/ultisnips'
+
 call plug#end()
 
 " ============="
@@ -284,3 +288,9 @@ endif
 " Clear highlighting on escape in normal mode
 nnoremap <esc> :noh<return><esc>
 nnoremap <esc>^[ <esc>^[
+
+" tabnine
+nnoremap gr :EasyCompleteReference<CR>
+nnoremap gd :EasyCompleteGotoDefinition<CR>
+nnoremap rn :EasyCompleteRename<CR>
+nnoremap gb :BackToOriginalBuffer<CR>
