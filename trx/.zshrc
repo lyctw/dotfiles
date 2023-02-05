@@ -7,14 +7,11 @@ fi
 
 # If you come from bash you might have to change your $PATH.
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
-export PATH=/home/users3/peterlin/.cargo/bin:$PATH:/home/users3/peterlin/local3/bin
+export PATH=/home/users3/peterlin/.cargo/bin:$PATH:/home/users3/peterlin/.local/bin:/home/users3/peterlin/bin
 
 export GPG_TTY=$(tty)
 export EDITOR=vim
 export GIT_SSH="/home/users3/peterlin/Github_repos/dotfiles/apc/proxy_jump.sh"
-# export http_proxy=http://10.0.1.18:3128/
-# export https_proxy=http://10.0.1.18:3128/
-# export ftp_proxy=http://10.0.1.18:3128/
 
 function proxy_on() {
     export no_proxy="localhost,127.0.0.1,localaddress,.localdomain.com"
@@ -26,10 +23,14 @@ function proxy_on() {
             return 1
         fi
         local proxy=$1
-        export http_proxy="$proxy" \
-               https_proxy=$proxy \
-               ftp_proxy=$proxy \
-               rsync_proxy=$proxy
+			export http_proxy="$proxy" \
+						 https_proxy=$proxy \
+						 ftp_proxy=$proxy \
+						 rsync_proxy=$proxy \
+						 HTTP_PROXY=$proxy \
+						 HTTPS_PROXY=$proxy \
+						 FTP_PROXY=$proxy \
+						 RSYNC_PROXY=$proxy
         # echo "Proxy environment variable set."
         return 0
     fi
