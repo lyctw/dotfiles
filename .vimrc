@@ -294,12 +294,6 @@ endif
 nnoremap <esc> :noh<return><esc>
 nnoremap <esc>^[ <esc>^[
 
-" tabnine
-nnoremap gr :EasyCompleteReference<CR>
-nnoremap gd :EasyCompleteGotoDefinition<CR>
-nnoremap rn :EasyCompleteRename<CR>
-nnoremap gb :BackToOriginalBuffer<CR>
-
 " Leetcode
 let g:leetcode_browser = 'brave'
 let g:leetcode_solution_filetype = 'c'
