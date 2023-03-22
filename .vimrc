@@ -137,6 +137,9 @@ call plug#begin('~/.vim/plugged')
     Plug 'jayli/vim-easycomplete'
     Plug 'SirVer/ultisnips'
 
+    " Leetcode
+    Plug 'mbledkowski/neuleetcode.vim'
+
 call plug#end()
 
 " ============="
@@ -294,3 +297,11 @@ nnoremap gr :EasyCompleteReference<CR>
 nnoremap gd :EasyCompleteGotoDefinition<CR>
 nnoremap rn :EasyCompleteRename<CR>
 nnoremap gb :BackToOriginalBuffer<CR>
+
+" Leetcode
+let g:leetcode_browser = 'brave'
+let g:leetcode_solution_filetype = 'c'
+nnoremap <leader>ll :LeetCodeList<cr>
+nnoremap <leader>lt :LeetCodeTest<cr>
+nnoremap <leader>ls :LeetCodeSubmit<cr>
+nnoremap <leader>li :LeetCodeSignIn<cr>
