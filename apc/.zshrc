@@ -173,6 +173,7 @@ alias mv='mv -v'
 alias wget='wget -c'
 alias tmux='tmux -2 -u'
 alias rgr='ranger'
+alias gdb='gdb -q'
 
 # Use programs without a root-equivalent group
 alias docker='sudo docker'

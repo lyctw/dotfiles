@@ -133,6 +133,13 @@ call plug#begin('~/.vim/plugged')
       \ 'do': 'yarn install',
       \ 'for': ['javascript', 'typescript'] }
 
+    " tabnine
+    Plug 'jayli/vim-easycomplete'
+    Plug 'SirVer/ultisnips'
+
+    " Leetcode
+    Plug 'mbledkowski/neuleetcode.vim'
+
 call plug#end()
 
 " ============="
@@ -284,3 +291,17 @@ endif
 " Clear highlighting on escape in normal mode
 nnoremap <esc> :noh<return><esc>
 nnoremap <esc>^[ <esc>^[
+
+" tabnine
+nnoremap gr :EasyCompleteReference<CR>
+nnoremap gd :EasyCompleteGotoDefinition<CR>
+nnoremap rn :EasyCompleteRename<CR>
+nnoremap gb :BackToOriginalBuffer<CR>
+
+" Leetcode
+let g:leetcode_browser = 'brave'
+let g:leetcode_solution_filetype = 'c'
+nnoremap <leader>ll :LeetCodeList<cr>
+nnoremap <leader>lt :LeetCodeTest<cr>
+nnoremap <leader>ls :LeetCodeSubmit<cr>
+nnoremap <leader>li :LeetCodeSignIn<cr>
