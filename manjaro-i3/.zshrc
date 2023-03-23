@@ -119,6 +119,7 @@ alias mv='mv -v'
 alias wget='wget -c'
 alias tmux='tmux -2 -u'
 alias rgr='ranger'
+alias gdb='gdb -q'
 alias rg='rg -g "!cscope*" -g "!tags"'
 
 function pushd () {
@@ -147,3 +148,6 @@ export FZF_CTRL_T_OPTS="--ansi --preview-window 'right:60%' --preview 'bat --col
 
 # Add RVM to PATH for scripting. Make sure this is the last PATH variable change.
 export PATH="$PATH:$HOME/.rvm/bin"
+
+# GPG for mutt
+export GPG_TTY=$(tty)
