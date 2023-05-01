@@ -133,12 +133,11 @@ call plug#begin('~/.vim/plugged')
       \ 'do': 'yarn install',
       \ 'for': ['javascript', 'typescript'] }
 
-    " tabnine
-    Plug 'jayli/vim-easycomplete'
-    Plug 'SirVer/ultisnips'
-
     " Leetcode
     Plug 'mbledkowski/neuleetcode.vim'
+
+    "Codeium
+    Plug 'Exafunction/codeium.vim'
 
 call plug#end()
 
