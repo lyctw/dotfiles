@@ -121,6 +121,7 @@ alias tmux='tmux -2 -u'
 alias rgr='ranger'
 alias gdb='gdb -q'
 alias rg='rg -g "!cscope*" -g "!tags"'
+alias v='vim'
 
 function pushd () {
     builtin pushd "$@" > /dev/null

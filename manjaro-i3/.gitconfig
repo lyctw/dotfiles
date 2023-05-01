@@ -1,9 +1,9 @@
 [user]
   name = Peter Lin
-  email = peterlin.tw@protonmail.com
+  email = peterlin@qilai.dev
 [core]
   editor = vim
-	excludesFile = ~/.gitignore
+  excludesFile = ~/.gitignore
 [color]
   ui = auto
 [alias]
