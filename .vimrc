@@ -139,6 +139,9 @@ call plug#begin('~/.vim/plugged')
     "Codeium
     Plug 'Exafunction/codeium.vim'
 
+    " Tagbar
+    Plug 'preservim/tagbar'
+
 call plug#end()
 
 " ============="
@@ -304,3 +307,6 @@ nnoremap <leader>ll :LeetCodeList<cr>
 nnoremap <leader>lt :LeetCodeTest<cr>
 nnoremap <leader>ls :LeetCodeSubmit<cr>
 nnoremap <leader>li :LeetCodeSignIn<cr>
+
+" Tagbar
+nmap <F8> :TagbarToggle<CR>
