@@ -79,7 +79,6 @@ sudo vim /usr/share/conky/conky1.10_shortcuts_maia
 sudo pacman -S xfce4-power-manager
 ```
 
-
 ## Input Methods
 
 Install ibus-chewing
@@ -113,9 +112,11 @@ ibus-daemon -drx
 
 Then logout or reboot to take effect.
 
-## Emojo
+## Fonts/Emojo
 
 ```
+# Installing Microsoft Fonts on Linux, ref: https://lexics.github.io/installing-ms-fonts
+wget -q -O - https://gist.githubusercontent.com/Blastoise/72e10b8af5ca359772ee64b6dba33c91/raw/2d7ab3caa27faa61beca9fbf7d3aca6ce9a25916/clearType.sh | bash
 sudo pacman -S noto-fonts-emoji
 ```
 
