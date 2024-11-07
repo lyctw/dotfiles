@@ -7,7 +7,7 @@ fi
 
 # If you come from bash you might have to change your $PATH.
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
-export PATH=/home/users3/peterlin/.cargo/bin:$PATH:/home/users3/peterlin/.local/bin:/home/users3/peterlin/bin
+export PATH=$HOME/.local/bin:$HOME/.cargo/bin:$PATH:/home/users3/peterlin/bin
 
 export GPG_TTY=$(tty)
 export EDITOR=vim
