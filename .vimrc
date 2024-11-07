@@ -36,8 +36,8 @@ autocmd FileType javascript :setlocal sw=2 ts=2 sts=2
 autocmd FileType xml :setlocal sw=2 ts=2 sts=2
 autocmd FileType python :setlocal sw=4 ts=4 sts=4
 autocmd FileType go :setlocal sw=4 ts=4 sts=4
-autocmd FileType c :setlocal sw=4 ts=4 sts=4
-autocmd FileType cpp :setlocal sw=4 ts=4 sts=4
+autocmd FileType c :setlocal sw=4 ts=8 sts=8
+autocmd FileType cpp :setlocal sw=4 ts=8 sts=8
 
 " Make vertical separator pretty
 highlight VertSplit cterm=NONE
@@ -99,7 +99,7 @@ call plug#begin('~/.vim/plugged')
     Plug 'vim-airline/vim-airline'
     Plug 'vim-airline/vim-airline-themes'
     Plug 'ryanoasis/vim-devicons'
-    Plug 'wakatime/vim-wakatime'
+    " Plug 'wakatime/vim-wakatime'
     " Plug 'jiangmiao/auto-pairs'
     " Plug 'w0rp/ale' " Syntex checker
 
@@ -134,10 +134,11 @@ call plug#begin('~/.vim/plugged')
       \ 'for': ['javascript', 'typescript'] }
 
     " Leetcode
-    Plug 'mbledkowski/neuleetcode.vim'
+    " Plug 'mbledkowski/neuleetcode.vim'
+    Plug 'ianding1/leetcode.vim'
 
-    "Codeium
-    Plug 'Exafunction/codeium.vim'
+    " editorconfig
+    Plug 'editorconfig/editorconfig-vim'
 
     " Tagbar
     Plug 'preservim/tagbar'
@@ -150,7 +151,7 @@ call plug#end()
 
 " ayu theme
 set termguicolors     " enable true colors support
-let ayucolor="dark"   " for dark version of theme
+let ayucolor="mirage"   " for dark version of theme
 colorscheme ayu
 
 " prettier
@@ -301,7 +302,7 @@ nnoremap rn :EasyCompleteRename<CR>
 nnoremap gb :BackToOriginalBuffer<CR>
 
 " Leetcode
-let g:leetcode_browser = 'brave'
+let g:leetcode_browser = 'chrome'
 let g:leetcode_solution_filetype = 'c'
 nnoremap <leader>ll :LeetCodeList<cr>
 nnoremap <leader>lt :LeetCodeTest<cr>
