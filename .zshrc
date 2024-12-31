@@ -118,12 +118,18 @@ alias tmux='tmux -u' # UTF-8 support
 alias docker='sudo docker'
 # alias npm='sudo npm'
 
-# Show contents of dir after action
 function cd () {
-    builtin cd "$1"
+    builtin pushd "$@" > /dev/null
+    # Show contents of dir after action
     ls -ACF
 }
 
+function popd() {
+    # Suppress the output of popd by redirecting it to /dev/null
+    builtin popd "$@" > /dev/null
+    # Show contents of dir after action
+    ls -ACF
+}
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
