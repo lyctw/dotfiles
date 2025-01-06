@@ -28,6 +28,14 @@ yay -S install zsh
 chsh -s $(which zsh)
 ```
 
+> chsh requires password, if you don't have root permission, try this:
+> ```
+> $ cat ~/.bash_profile
+> # User specific environment and startup programs
+> export SHELL=/bin/zsh
+> exec /bin/zsh -l
+> ```
+
 2. reboot and configure with zsh prompt
 
 3. Install oh my zsh
