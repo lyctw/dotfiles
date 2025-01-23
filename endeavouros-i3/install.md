@@ -1,7 +1,7 @@
 yay -S ranger lazygit neofetch btop htop \
 	base-devel \
 	cscope ctags  \
-	wezterm \
+	wezterm ttf-fira-code \
 	brave-bin \
 	keepassxc \
 	fcitx5 fcitx5-gtk fcitx5-qt \
