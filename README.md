@@ -66,6 +66,8 @@ ln -s $(pwd)/.zshrc ~/.zshrc
 git clone --depth=1 https://github.com/romkatv/powerlevel10k.git ${ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom}/themes/powerlevel10k
 ```
 
+Change theme in `.zshrc`: `ZSH_THEME="powerlevel10k/powerlevel10k"`
+
 Download and install [MesloLGS NF Regular](https://github.com/romkatv/powerlevel10k#meslo-nerd-font-patched-for-powerlevel10k)
 
 7. Download zsh plugins
@@ -74,18 +76,7 @@ Download and install [MesloLGS NF Regular](https://github.com/romkatv/powerlevel
 git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions
 ```
 
-8. Set the `ZSH_TMUX_AUTOSTART` variable
-
-Modify `$HOME/.oh-my-zsh/plugins/tmux/tmux.plugin.zsh`
-
-```
-...
-# Automatically start tmux
-${ZSH_TMUX_AUTOSTART:=true}
-...
-```
-
-10. Don't forget apply our changes!
+8. Don't forget apply our changes!
 
 ```
 source ~/.zshrc
