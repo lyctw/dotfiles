@@ -26,7 +26,8 @@
 font pango: Noto Sans Regular 10
 
 # set the mod key to the winkey:
-set $mod Mod4
+# Mod4: Windows Key, Mod1: Alt
+set $mod Mod1
 
 #####################
 # workspace layout: #
