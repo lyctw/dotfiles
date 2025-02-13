@@ -329,11 +329,11 @@ workspace $ws9  output eDP-1
 workspace $ws10 output eDP-1
 
 # bind program to workspace and focus to them on startup:
-assign [class="wezterm"] $ws1
-assign [class="Brave-browser"] $ws2
-assign [class="Thunar"] $ws3
-assign [class="thunderbird"] $ws4
-assign [class="Slack"] $ws5
+#assign [class="wezterm"] $ws1
+#assign [class="Brave-browser"] $ws2
+#assign [class="Thunar"] $ws3
+#assign [class="thunderbird"] $ws4
+#assign [class="Slack"] $ws5
 
 # automatic set focus new window if it opens on another workspace than the current:
 for_window [class=Xfce4-terminal] focus
