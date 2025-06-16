@@ -18,6 +18,9 @@ set $term wezterm
 # Your preferred application launcher
 set $menu wmenu-run
 
+# Fcitx5
+exec --no-startup-id fcitx5 -d
+
 ### Output configuration
 #
 # Default wallpaper (more resolutions are available in @datadir@/backgrounds/sway/)
