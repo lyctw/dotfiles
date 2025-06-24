@@ -131,6 +131,59 @@ function popd() {
     ls -ACF
 }
 
+function fdtdiff() {
+    if [ $# -ne 2 ]; then
+        echo "Usage: fdtdiff <file1> <file2>"
+        echo "  Files must be .dtb or .dts files (can be mixed)"
+        return 1
+    fi
+
+    local file1="$1"
+    local file2="$2"
+    local ext1="${file1##*.}"
+    local ext2="${file2##*.}"
+    local temp_dir=$(mktemp -d)
+    local dts1="${temp_dir}/file1.dts"
+    local dts2="${temp_dir}/file2.dts"
+
+    # Process first file
+    if [ "$ext1" = "dtb" ]; then
+        dtc -I dtb -O dts -o "$dts1" "$file1"
+    elif [ "$ext1" = "dts" ]; then
+        # DTS file: Convert to DTB and then to DTS for normalization
+        local dtb1="${temp_dir}/file1.dtb"
+        dtc -I dts -O dtb -o "$dtb1" "$file1"
+        dtc -I dtb -O dts -o "$dts1" "$dtb1"
+    else
+        echo "Error: First file must be .dtb or .dts format"
+        rm -rf "$temp_dir"
+        return 1
+    fi
+
+    # Process second file
+    if [ "$ext2" = "dtb" ]; then
+        dtc -I dtb -O dts -o "$dts2" "$file2"
+    elif [ "$ext2" = "dts" ]; then
+        # DTS file: Convert to DTB and then to DTS for normalization
+        local dtb2="${temp_dir}/file2.dtb"
+        dtc -I dts -O dtb -o "$dtb2" "$file2"
+        dtc -I dtb -O dts -o "$dts2" "$dtb2"
+    else
+        echo "Error: Second file must be .dtb or .dts format"
+        rm -rf "$temp_dir"
+        return 1
+    fi
+
+    # Check if difft is available, otherwise use diff
+    if command -v difft &> /dev/null; then
+        difft "$dts1" "$dts2"
+    else
+        diff -u "$dts1" "$dts2"
+    fi
+
+    rm -rf "$temp_dir"
+}
+
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 
