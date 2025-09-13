@@ -21,6 +21,9 @@ set $menu wmenu-run
 # Fcitx5
 exec --no-startup-id fcitx5 -d
 
+# XWayland
+exec_always dbus-update-activation-environment --systemd WAYLAND_DISPLAY XDG_CURRENT_DESKTOP=sway
+
 ### Output configuration
 #
 # Default wallpaper (more resolutions are available in @datadir@/backgrounds/sway/)
