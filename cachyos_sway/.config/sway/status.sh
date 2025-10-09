@@ -13,10 +13,23 @@ while true; do
         ip="disconnected"
     fi
 
-    # WiFi name
-    wifi="($(iw dev | awk '/Interface/ {iface=$2} /ssid/ {print $2; exit}'))"
-    if [ -z "$wifi" ]; then
-        wifi=""
+    # Network connection
+    iface="$(iw dev | awk '$1=="Interface"{print $2; exit}')"
+    ssid="$(iw dev "$iface" link | awk -F'SSID: ' '/SSID: /{print $2; exit}')"
+
+    # Determine network type and name
+    network_name=""
+    if [ -n "$ssid" ]; then
+        # WiFi connection - use actual SSID name
+        network_name="($ssid)"
+    else
+        # Check for ethernet connection
+        eth_iface=$(ip route get 1 2>/dev/null | awk '{print $5; exit}')
+        if [[ "$eth_iface" =~ ^(eth|enp|eno) ]]; then
+            network_name="(Ethernet)"
+        else
+            network_name="(Unknown)"
+        fi
     fi
 
     # Battery
@@ -30,6 +43,6 @@ while true; do
     # Date
     date_str=$(date +'%Y-%m-%d %X')
 
-    echo "RAM: $ram | CPU: $cpu | IP: $ip $wifi | BAT: $bat | $date_str"
+    echo "RAM: $ram | CPU: $cpu | IP: $ip $network_name | BAT: $bat | $date_str"
     sleep 1
 done
