@@ -40,9 +40,38 @@ while true; do
         bat="N/A"
     fi
 
+    # Audio output device with volume
+    default_sink=$(pactl info | grep "Default Sink:" | awk '{print $3}')
+    if [ -n "$default_sink" ]; then
+        # Get the user-friendly description of the sink
+        audio_device=$(pactl list sinks | grep -A 20 "Name: $default_sink" | grep "Description:" | sed 's/.*Description: //' | head -1)
+        # Shorten common long names for better display
+        audio_device=$(echo "$audio_device" | sed 's/Digital Stereo (IEC958)/Digital/' | sed 's/Analog Stereo/Analog/')
+
+        # Get volume percentage (average of left and right channels)
+        volume=$(pactl list sinks | grep -A 20 "Name: $default_sink" | grep "Volume:" | head -1 | awk '{print $5}' | sed 's/%//')
+
+        # Check if muted
+        muted=$(pactl list sinks | grep -A 20 "Name: $default_sink" | grep "Mute:" | awk '{print $2}')
+
+        # Limit device name length to make room for volume
+        if [ ${#audio_device} -gt 20 ]; then
+            audio_device="${audio_device:0:17}..."
+        fi
+
+        # Format: device (volume%) or device (muted)
+        if [ "$muted" = "yes" ]; then
+            audio_device="$audio_device (muted)"
+        else
+            audio_device="$audio_device (${volume}%)"
+        fi
+    else
+        audio_device="No Audio"
+    fi
+
     # Date
     date_str=$(date +'%Y-%m-%d %X')
 
-    echo "RAM: $ram | CPU: $cpu | IP: $ip $network_name | BAT: $bat | $date_str"
+    echo "RAM: $ram | CPU: $cpu | IP: $ip $network_name | BAT: $bat | Audio: $audio_device | $date_str"
     sleep 1
 done
