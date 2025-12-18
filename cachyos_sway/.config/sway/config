@@ -24,6 +24,9 @@ exec --no-startup-id fcitx5 -d
 # XWayland
 exec_always dbus-update-activation-environment --systemd WAYLAND_DISPLAY XDG_CURRENT_DESKTOP=sway
 
+# Clipboard
+exec --no-startup-id wl-paste --watch cliphist store
+
 ### Output configuration
 #
 # Default wallpaper (more resolutions are available in @datadir@/backgrounds/sway/)
@@ -231,6 +234,9 @@ bindsym $mod+r mode "resize"
 
     # Special key to take a screenshot
     bindsym $mod+Ctrl+p exec grim -g "$(slurp)" - | swappy -f -
+
+    # Clipboard
+    bindsym $mod+Ctrl+v exec --no-startup-id foot -e bash -ic 'sel="$(cliphist list | fzf --prompt="Clipboard> ")"; [ -n "$sel" ] && cliphist decode "$sel" | wl-copy'
 
 #
 # Status Bar:
