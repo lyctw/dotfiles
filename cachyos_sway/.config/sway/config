@@ -100,6 +100,18 @@ output DVI-D-0  resolution 1920x1080 position 1920,0
     # Exit sway (logs you out of your Wayland session)
     bindsym $mod+Shift+e exec swaynag -t warning -m 'You pressed the exit shortcut. Do you really want to exit sway? This will end your Wayland session.' -B 'Yes, exit sway' 'swaymsg exit'
 
+    # Lock screen
+    bindsym $mod+Ctrl+l exec swaylock -i /usr/share/backgrounds/sway/my-lock-img.jpg
+
+    # Reset monitors
+    ### $ cat  ~/.config/sway/enable-all-outputs.sh
+    ### #!/usr/bin/env bash
+    ### set -euo pipefail
+    ### swaymsg -t get_outputs | jq -r '.[].name' | while read -r out; do
+    ###   swaymsg "output $out enable"
+    ### done
+    bindsym --locked $mod+Ctrl+e exec ~/.config/sway/enable-all-outputs.sh
+
 #
 # Moving around:
 #
