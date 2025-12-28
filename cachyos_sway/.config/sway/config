@@ -16,6 +16,8 @@ set $right l
 # Your preferred terminal emulator
 set $term wezterm
 # Your preferred application launcher
+# rofi theme: https://github.com/newmanls/rofi-themes-collection
+# rofi -show drun -theme rofi-themes-collection/themes/spotlight-dark.rasi
 set $menu wmenu-run
 
 # Fcitx5
