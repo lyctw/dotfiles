@@ -89,6 +89,9 @@ output DVI-D-0  resolution 1920x1080 position 1920,0
     # Start your launcher
     bindsym $mod+d exec $menu
 
+    # Web search
+    bindsym $mod+Shift+d exec rofi -dmenu -p "Search" | xargs -I{} xdg-open "https://google.com/search?q={}"
+
     # Drag floating windows by holding down $mod and left mouse button.
     # Resize them with right mouse button + $mod.
     # Despite the name, also works for non-floating windows.
